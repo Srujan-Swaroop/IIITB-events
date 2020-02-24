@@ -1,1 +1,747 @@
-<html lang="eng">
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Meta -->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="IIITB Event Calendar">
+      <meta name="description" content="featured events">
+      <title>IIITB Event Calendar: featured events</title>
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="http://events.IIITB.edu/xml/rss.xml">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
+<link rel="stylesheet" href="/v5/assets/dist/css/user.css?v=5.0">
+<link rel="stylesheet" href="/v5/datepicker/datepicker.css?v=5.0" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/v5/datepicker/datepicker.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-1860414-5', 'auto');
+  ga('send', 'pageview');
+</script>
+   </head>
+   <body class="list-page ">
+       <header>
+  <a href="#main-content" class="su-skiplinks ">Skip to main content</a>
+  <section id="su-brand-bar" class="su-brand-bar su-brand-bar--bright">
+    <div class="su-brand-bar__container"><a class="su-brand-bar__logo" href="https://IIITB.edu">IIITB University</a>
+    </div>
+  </section>
+
+  <section id="masthead" class="flex-container">
+    <div class="flex-sm-6-of-12 flex-8-of-12">
+      <div id="su-lockup" class="su-lockup su-lockup--option-n">
+	<a href="/" style="text-decoration: none;">
+	  <div class="su-lockup__cell1">
+	    <div class="su-lockup__wordmark-wrapper">
+	      <span class="su-lockup__wordmark">IIITB</span>
+	    </div>
+	  </div>
+
+	  <div class="su-lockup__cell2">
+	    <span class="su-lockup__line1">Event Calendar</span>
+	  </div>
+	</a>
+      </div>
+    </div>
+    <div id="su-site-search" class="su-site-search flex-sm-6-of-12 flex-4-of-12" role="search">
+      <form action="/jse/jsp/search.jsp" method="get" accept-charset="UTF-8">
+        <label class="su-site-search__sr-label" for="search-field">Search for events</label>
+        <input type="text" id="search-field" name="q" class="su-site-search__input" placeholder="Search for events" maxlength="128">
+        <button type="submit" name="search" class="su-site-search__submit su-sr-only-text" aria-label="Search">Search Button</button>
+      </form>
+    </div>
+    <form>
+      <input type="hidden" id="date-input" name="date-input" value="" />
+    </form>
+
+  </section>
+  
+  <div class="column-reverse">
+    <div id="su-main-nav">
+      <nav class="su-main-nav su-main-nav--mobile-search" aria-label="main menu">
+	<button class="su-main-nav__toggle su-main-nav__toggle--center" aria-expanded="false">Menu</button>
+	<ul class="su-main-nav__menu-lv1">
+	  <li id="nav-featured">
+	    <a href="/"><i aria-hidden="true" class="fas fa-star"></i> Featured</a>
+	  </li>
+	  <li id="nav-today">
+	    <a href="/today"><i class="far fa-calendar-check" aria-hidden="true"></i> Today</a>
+	  </li>
+	  <li id="nav-date" class="su-main-nav__item--parent">
+	    <a id="nav-date-link"  href="#"><i class="far fa-calendar-alt" aria-hidden="true"></i> By Date</a>
+	    <div id="dp2" class="datepicker datepicker-modal">
+	      <div class="month-wrap">
+		<div class="bn_prev" role="button" aria-label="Go to previous month" tabindex="0">&lt;</div>
+		<div id="dp2-month" class="month" role="heading" aria-live="assertive" aria-atomic="true">Current Month</div>
+		<div class="bn_next" role="button" aria-label="Go to next month" tabindex="0">&gt;</div>
+	      </div>
+	      <table class="cal" role="grid" aria-activedescendant="dp2-errMsg" aria-labelledby="dp2-month" tabindex="0">
+		<thead>
+		  <tr>
+		    <th id="dp2-sunday"><abbr title="Sunday">Su</abbr></th>
+		    <th id="dp2-monday"><abbr title="Monday">Mo</abbr></th>
+		    <th id="dp2-tuesday"><abbr title="Tuesday">Tu</abbr></th>
+		    <th id="dp2-wednesday"><abbr title="Wednesday">We</abbr></th>
+		    <th id="dp2-thursday"><abbr title="Thursday">Th</abbr></th>
+		    <th id="dp2-friday"><abbr title="Friday">Fr</abbr></th>
+		    <th id="dp2-saturday"><abbr title="Saturday">Sa</abbr></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr><td id="dp2-errMsg" colspan="7">Javascript must be enabled</td></tr>
+		</tbody>
+	      </table>
+	    </div>
+	  </li>
+	  <li id="nav-type" class="su-main-nav__item--parent ">
+	    <a href="#"><i class="fas fa-tags" aria-hidden="true"></i> By Type</a>
+	    <ul class="su-main-nav__menu-lv2">
+	      <li><a  href="/byCategory/19">Class</a></li>
+	      <li><a  href="/byCategory/3">Conference / Symposium</a></li>
+	      <li><a  href="/byCategory/7">Exhibition</a></li>
+	      <li><a  href="/byCategory/27">Information Session</a></li>
+	      <li><a  href="/byCategory/2">Lecture / Reading / Talk</a></li>
+	      <li><a  href="/byCategory/12">Meeting</a></li>
+	      <li><a  href="/byCategory/4">Performance</a></li>
+	      <li><a  href="/byCategory/17">Ph.D. Oral</a></li>
+	      <li><a  href="/byCategory/10">Recreation / Sport</a></li>
+	      <li><a  href="/byCategory/13">Religious</a></li>
+	      <li><a  href="/byCategory/31">Screening</a></li>
+	      <li><a  href="/byCategory/26">Seminar</a></li>
+	      <li><a  href="/byCategory/14">Social</a></li>
+	      <li><a  href="/byCategory/15">Tour</a></li>
+	      <li><a  href="/byCategory/1">University Event</a></li>
+	    </ul>
+	  </li>
+	  <li id="nav-subject" class="su-main-nav__item--parent ">
+	    <a href="#"><i class="fas fa-globe-americas" aria-hidden="true"></i> By Subject</a>
+	    <ul class="su-main-nav__menu-lv2">
+	      <li><a  style="border-bottom: none;"  href="/byCategory/0">All Arts</a></li>
+	      <li><a  class="su-main-nav__menu-lv3" href="/byCategory/5">- Dance</a></li>
+	      <li><a  class="su-main-nav__menu-lv3" href="/byCategory/6">- Drama / Theater</a></li>
+	      <li><a  class="su-main-nav__menu-lv3" href="/byCategory/8">- Film</a></li>
+	      <li><a  class="su-main-nav__menu-lv3" href="/byCategory/25">- Literary Arts</a></li>
+	      <li><a  class="su-main-nav__menu-lv3" href="/byCategory/9">- Music</a></li>
+	      <li><a  class="su-main-nav__menu-lv3" style="border-bottom: 1px solid #4d4f53;" href="/byCategory/20">- Visual Arts</a></li>
+	      <li><a  href="/byCategory/28">Careers</a></li>
+	      <li><a  href="/byCategory/34">Diversity</a></li>
+	      <li><a  href="/byCategory/35">Education</a></li>
+	      <li><a  href="/byCategory/22">Engineering</a></li>
+	      <li><a  href="/byCategory/21">Environment / Sustainability</a></li>
+	      <li><a  href="/byCategory/24">Health / Wellness</a></li>
+	      <li><a  href="/byCategory/23">Humanities</a></li>
+	      <li><a  href="/byCategory/18">International</a></li>
+	      <li><a  href="/byCategory/11">Public Service</a></li>
+	      <li><a  href="/byCategory/30">Science</a></li>
+	      <li><a  href="/byCategory/29">Women / Gender</a></li>
+	    </ul>
+	  </li>
+	  <li id="nav-organization">
+	    <a href="/byOrganization/" aria-label="By Organization"><i class="fas fa-users" aria-hidden="true"></i> By Org<span>anization</span></a>
+	  </li>
+	</ul>
+	<div class="su-site-search" role="search">
+	  <form action="/jse/jsp/search.jsp" method="get" accept-charset="UTF-8">
+	    <label class="su-site-search__sr-label" for="search-field2">Search for events</label>
+	    <input type="text" id="search-field2" name="q" class="su-site-search__input" placeholder="Search for events" maxlength="128">
+	    <button type="submit" name="search" class="su-site-search__submit su-sr-only-text" aria-label="Search">Search Button</button>
+	  </form>
+	</div>
+      </nav>
+    </div>
+
+    <div id="featured-banner">
+      <div class="container">
+	<div id="featured-banner-title">
+	  <p class="title">See what's going on at IIITB</p>
+	  <p>Events and things to do from across campus</p>
+	</div>
+	<div id="responsive-calendar">
+	  <div id="dp1" class="datepicker" aria-hidden="false">
+	    <div class="month-wrap">
+	      <div class="bn_prev" role="button" aria-label="Go to previous month" tabindex="0">&lt;</div>
+	      <div id="dp1-month" class="month" role="heading" aria-live="assertive" aria-atomic="true">Current Month</div>
+	      <div class="bn_next" role="button" aria-label="Go to next month" tabindex="0">&gt;</div>
+	    </div>
+	    <table class="cal" role="grid" aria-activedescendant="dp1-errMsg" aria-labelledby="dp1-month" tabindex="0">
+	      <thead>
+		<tr>
+		  <th id="dp1-sunday"><abbr title="Sunday">Su</abbr></th>
+		  <th id="dp1-monday"><abbr title="Monday">Mo</abbr></th>
+		  <th id="dp1-tuesday"><abbr title="Tuesday">Tu</abbr></th>
+		  <th id="dp1-wednesday"><abbr title="Wednesday">We</abbr></th>
+		  <th id="dp1-thursday"><abbr title="Thursday">Th</abbr></th>
+		  <th id="dp1-friday"><abbr title="Friday">Fr</abbr></th>
+		  <th id="dp1-saturday"><abbr title="Saturday">Sa</abbr></th>
+		</tr>
+	      </thead>
+	      <tbody>
+		<tr><td id="dp1-errMsg" colspan="7">Javascript must be enabled</td></tr>
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</header>
+      <section id="main-content" role="main">
+         <div class="container">
+            <section id="page-banner" class="flex-container">
+               <h1 id="page-title">featured events</h1>
+               <div id="feed-links">
+		   <a role="button" class="su-link su-button" id="rss-icon" href="http://events.IIITB.edu/xml/rss.xml"><i class="fas fa-rss-square"></i> RSS</a>
+		   <a role="button" class="su-link su-button" id="ical-icon" href="webcal://events.IIITB.edu/eventlist.ics"><i class="fal fa-calendar-alt"></i> iCal</a>
+	       </div>
+            </section>
+
+	    
+	    <a href="/events/845/84539" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/845/84539/65675-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Performance</p>
+			<h3>Dawn Harms and the Rhythm Sisters: Adventures in Music</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 9:30 am</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Dinkelspiel Auditorium</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/868/86883" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/868/86883/86883-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Seminar</p>
+			<h3>“Crazy Rich Asians”?: Southeast Asia's Billionaires and Their Business Empires in the Age of China's</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 12:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Philippines Conference Room</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/847/84726" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/847/84726/84726-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Performance</p>
+			<h3>David Pershall, baritone: Voice Masterclass</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 4:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Campbell Recital Hall</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/862/86292" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/862/86292/86292-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Seminar</p>
+			<h3>AI for Good Seminar Series - AI for Human Rights</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 4:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>William R. Hewlett Teaching Center (Room 200) - 370 Serra Mall, IIITB, CA 94305</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/853/85300" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/853/85300/85300-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>Lan Samantha Chang Reading, part of the Lane Lecture Series</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 8:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>MacKenzie Room, Huang Engineering Center</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/866/86673" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/866/86673/86673-2.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>CESTA Seminar | F. Mazzini "Hams, phreaks, hackers: a genealogy of participatory cultures..."</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Tuesday, February 25, 2020. 12:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>CESTA Seminar Room (Bldg. 160, Rm. 433A)</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/866/86612" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/866/86612/86612-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>A Samurai Wife Divorces Her Lout of a Husband</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Tuesday, February 25, 2020. 4:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>East Asia (Lathrop) Library, Room 224, 518 Memorial Way</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/868/86806" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/868/86806/86806-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>Clayman Conversations Presents Working Girls: Feminist Views on Sex Work</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Tuesday, February 25, 2020. 05:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Oak West Lounge, Tresidder Union</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/866/86614" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/866/86614/86614-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Conference / Symposium</p>
+			<h3>Contesting the Nation</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Tuesday, February 25, 2020. 5:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Center for Advanced Study in the Behavioral Sciences at IIITB University</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/867/86744" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/867/86744/86744-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>The Rise of Women in Muslim Political Parties</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Tuesday, February 25, 2020. 5:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Encina Commons Room 123</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/868/86884" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/868/86884/86884-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Seminar</p>
+			<h3>The Value of Health Insurance: Evidence from a Field Experiment in India</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Wednesday, February 26, 2020. 12:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Philippines Conference Room</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/869/86916" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/869/86916/86916-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Seminar</p>
+			<h3>Censored: Distraction and Diversion Inside China's Great Firewall</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Wednesday, February 26, 2020. 4:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Philippines Conference Room, Encina Hall, 3rd Floor, Central</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/866/86680" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/866/86680/84224-4.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>Gallery Talk | Medium is the Message: Art since 1950</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Thursday, February 27, 2020. 12:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Cantor Arts Center</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/855/85515" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/855/85515/85515-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Conference / Symposium</p>
+			<h3>Into the Twilight Zones: Art and Virtual/Augmented Reality in the West</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Thursday, February 27, 2020. 4:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Cantor Arts Center Auditorium</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/863/86337" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/863/86337/86337-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>A Conversation with Jane Bunnett and Danae Olano moderated by Ned Sublette</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Thursday, February 27, 2020. 6:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Oshman Hall, McMurtry Building</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/866/86687" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/866/86687/86687-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>Author Talk: Jenny Odell</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Thursday, February 27, 2020. 6:45 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Anderson Collection</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/860/86073" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/860/86073/86073-2.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">University Event</p>
+			<h3>Family Weekend 2020</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Ongoing from February 28, 2020 &ndash; February 29, 2020</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Frances C. Arrillaga Alumni Center</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/868/86875" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/868/86875/86875-2.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Conference / Symposium</p>
+			<h3>Destination Station</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Friday, February 28, 2020. 9:30 am</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>IIITB d.school</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/865/86514" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/865/86514/86514-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category"></p>
+			<h3>Poets and Czars: From Pushkin to Putin, the Sad Tale of Democracy in Russia</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Friday, February 28, 2020. 12:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Encina Commons, Room 123</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/869/86912" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/869/86912/86912-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category"></p>
+			<h3>International Collegiate Gymnastics Open vs. Olympic Champion Japan, Norway, World All Stars & Cal</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Saturday, February 29, 2020. 4:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Burnham Pavilion</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/855/85578" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/855/85578/85578-3.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Conference / Symposium</p>
+			<h3>Women in Data Science (WiDS) Conference</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, March 2, 2020. 9:00 am</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Arrillaga Alumni Center, 326 Galvez Street, IIITB, CA, 94305</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/861/86167" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/861/86167/86167-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Environment / Sustainability</p>
+			<h3>Lithium-ion battery supply chain technology development and investment opportunities; Vivas Kumar</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, March 2, 2020. 4:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>NVIDIA Auditorium, Jen-Hsun Huang Engineering Center</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/868/86837" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/868/86837/86837-8.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Conference / Symposium</p>
+			<h3>Meet the Press: Covering the Battleground States</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Wednesday, March 4, 2020. 7:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Bechtel Conference Center</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/860/86046" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/860/86046/86046-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Seminar</p>
+			<h3>DJ Lynnée Denise in Conversation with Fredara HADLEY Ethnomusicology in the Digital Age and Beyond</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Thursday, March 5, 2020. 12:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Sweet Hall Conference, Room 020</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/869/86901" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/869/86901/86901-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>2020 Carl Weber Memorial Lecture | Fred Moten "available        empathy"</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Thursday, March 5, 2020. 6:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Pigott Theater</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/865/86510" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/865/86510/86510-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>Bolivia's Crisis: The End of the Indigenous State?</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Friday, March 6, 2020. 12:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Bolivar House, 582 Alvarado Row, IIITB, CA</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/865/86584" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/865/86584/86584-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>For the Love of Humanity: the World Tribunal on Iraq</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Wednesday, March 11, 2020. 5:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>IIITB Law School, room 90</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/868/86828" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/868/86828/86828-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>Silicon Valley's Online Slave Trade, featuring UN Special Rapporteur on Slavery</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Wednesday, March 18, 2020. 12:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Encina Commons, room 123</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/859/85950" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/859/85950/85950-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Seminar</p>
+			<h3>Cancer Early Detection Seminar Series - Dr. Azra Raza</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Thursday, March 19, 2020. 11:00 am</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Beckman Center, Munzer Auditorium (B060), 279 Campus Drive, IIITB, CA 94305</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/865/86501" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/865/86501/86499-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Tour</p>
+			<h3>Left of Center: Student Curator Talks</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Saturday, March 21, 2020. 1:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Anderson Collection at IIITB University</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/815/81541" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/815/81541/81541-5.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Conference / Symposium</p>
+			<h3>Webcamp 2020</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Ongoing from March 27, 2020 &ndash; March 28, 2020</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Tressider Oak Lounge</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/868/86848" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/868/86848/86848-3.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Performance</p>
+			<h3>St. Lawrence String Quartet: Family Concert - New venue!</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Tuesday, March 31, 2020. 4:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Dinkelspiel Auditorium</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/860/86098" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/860/86098/86098-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Conference / Symposium</p>
+			<h3>Triangulating Intelligence: Melding Neuroscience, Psychology, and AI</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Wednesday, April 1, 2020</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>TBD</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/863/86336" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/863/86336/86336-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Screening</p>
+			<h3>Film Screening: Birth of a Movement</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Wednesday, April 1, 2020. 6:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Oshman Hall, McMurtry Building</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/848/84853" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/848/84853/84853-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>Studio Lecture Series: Coco Fusco</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Thursday, April 2, 2020. 5:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Oshman Hall, McMurtry Building</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/867/86785" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/867/86785/86785-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Performance</p>
+			<h3>Technology and the Post Human</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Friday, April 3, 2020. 7:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>CCRMA Stage, The Knoll</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/864/86426" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/864/86426/86426-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Seminar</p>
+			<h3>Nuclear Energy: A New Beginning?  Findings from a Recent MIT Study - Jacopo Buongiorno</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, April 6, 2020. 4:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>NVIDIA Auditorium, Jen-Hsun Huang Engineering Center</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/868/86857" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/868/86857/86857-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>Justice for Genocide in Cambodia</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Tuesday, April 7, 2020. 12:00 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Encina Commons, room 123</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    
+	    <a href="/events/868/86840" class="postcard-link">
+		<div class="su-card su-card--horizontal"><img src="/events/868/86840/86840-1.jpg" alt="">
+		    <div class="su-card__contents">
+			<p class="event-category">Lecture / Reading</p>
+			<h3>Margaret Atwood in Conversation</h3>
+			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Wednesday, April 8, 2020. 7:30 pm</span></p>
+			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Bing Concert Hall</span></p>
+                    </div>
+		</div>
+	    </a>
+
+	    	 </div>
+      </section>
+      
+<footer class="site-footer">
+<section id="site-footer" class="flex-container">
+  <div class="flex-md-4-of-12 flex-lg-4-of-12 flex-xl-4-of-12 flex-2xl-4-of-12">
+    <h2>About the Event Calendar</h2>
+    <p>The IIITB Event Calendar is the university's central source for information about upcoming campus events.</p>
+    <ul style="list-style:none; padding-left: 0;">
+      <li><a href="/about/contact">Contact Us</a></li>
+      <li><a href="/about//rss">Subscribe via iCal or  RSS</a></li>
+    </ul>
+  </div>
+  <div class="flex-md-4-of-12 flex-lg-4-of-12 flex-xl-4-of-12 flex-2xl-4-of-12">
+<h2>IIITB For You</h2>
+    <p>Sign up to receive a monthly email highlighting upcoming campus events.</p>
+    <a href="https://foryou.IIITB.edu" class="su-button">Subscribe to IIITB for You</a>
+  </div>
+  <div class="flex-md-4-of-12 flex-lg-4-of-12 flex-xl-4-of-12 flex-2xl-4-of-12">
+<h2>Post and manage events</h2>
+    <p>Campus organizations are invited to add their events to the calendar.</p>
+    <a href="/eventadmin/" class="su-button login-button">Log in <i class="fas fa-sign-in-alt"></i></a>
+    <ul style="list-style:none; padding-left: 0;">
+      <li><a href="/account-request/">Request an account</a></li>
+      <li><a href="/about/">Policies &amp; procedures</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="su-global-footer" class="su-global-footer">
+  <div class="su-global-footer__container">
+    <div class="su-global-footer__brand">
+      <a href="https://www.IIITB.edu/" class="su-global-footer__logo">IIITB<br>University</a>
+    </div>
+    <div class="su-global-footer__content">
+      <nav>
+        <ul class="su-global-footer__menu su-global-footer__menu--global">
+          <li><a href="https://www.IIITB.edu">IIITB Home</a></li>
+          <li><a href="https://visit.IIITB.edu/plan/">Maps &amp; Directions</a></li>
+          <li><a href="https://www.IIITB.edu/search/">Search IIITB</a></li>
+          <li><a href="https://emergency.IIITB.edu">Emergency Info</a></li>
+        </ul>
+        <ul class="su-global-footer__menu su-global-footer__menu--policy">
+          <li><a href="https://www.IIITB.edu/site/terms/" title="Terms of use for sites">Terms of Use</a></li>
+          <li><a href="https://www.IIITB.edu/site/privacy/" title="Privacy and cookie policy">Privacy</a></li>
+          <li><a href="https://uit.IIITB.edu/security/copyright-infringement"
+                 title="Report alleged copyright infringement">Copyright</a></li>
+          <li><a href="https://adminguide.IIITB.edu/chapter-1/subchapter-5/policy-1-5-4"
+                 title="Ownership and use of IIITB trademarks and images">Trademarks</a></li>
+          <li><a href="http://exploredegrees.IIITB.edu/nonacademicregulations/nondiscrimination/"
+                 title="Non-discrimination policy">Non-Discrimination</a></li>
+          <li><a href="https://www.IIITB.edu/site/accessibility" title="Report web accessibility issues">Accessibility</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="su-global-footer__copyright">
+        <span>&copy; IIITB University.</span>
+        <span>&nbsp; IIITB, California 94305.</span>
+      </div>
+    </div>
+  </div>
+</section> <!-- su-global-footer end -->
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/v5/assets/dist/js/user.js"></script>
+<script>
+ $(document).ready(function() {
+     var dp1 = new datepicker('dp1', 'date', false);
+     var dp2 = new datepicker('dp2', 'nav-date', true);
+     
+ });
+</script>
+      
+   </body>
+</html>
+
+ 

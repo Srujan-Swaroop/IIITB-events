@@ -1,0 +1,377 @@
+.header-background-manager{
+  /*background-image: url("https://www.iiitb.ac.in/includefiles/userfiles/images/iiitb_logo.jpg");*/
+  width: 100%;
+  height: 100%;
+  background-color: #dbe0e3;
+}
+
+
+
+/*############################## 					DIV-1			LOGO LOGIN                        #######################*/
+
+
+.logo-login{
+  /*background-color: #333333;*/
+  display: flex;
+  /*background: rgb(51,51,51);  Fallback for older browsers without RGBA-support */
+  /*background: rgba(13, 135, 165, 1);*/
+  background-color: #4a8594;
+  justify-content: space-between;
+}
+
+.logo-login div:last-child {
+  margin-left: auto;
+}
+
+.iiitb_logo{
+  width: 80px;
+  height: 80px;
+   padding-left: 20px;
+}
+
+.iiitb-logo-text{
+  display: inline-block;
+  font-family: 'Serif',Stanford, 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
+  font-style: large;
+  font-weight: 900;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 0.9;
+   padding-top: 34px;
+   padding-left: 5px;
+  color: rgb(4, 44, 104);
+/*   top: 5px; */
+  font-size: 35px;
+/*   -ms-grid-column: 2; */
+/*   position: absolute; */
+
+}
+
+.login
+{
+	padding-right: 10px;
+	padding-top: 20px;
+}
+
+
+.login-button-manager{
+  /*position: absolute;*/
+  width: 90px;
+  height: 20px;
+  background-color: #1A3C6F;
+  display: inline-block;
+  font-family: 'Serif', 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
+  font-style: large;
+  font-weight: 800;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 0.9;
+
+   /*margin-top: 22px; */
+   /*margin-right: 20px; */
+
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+
+   padding-top: 10px;
+   padding-right: 20px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+/*   float:right; */
+}
+
+
+
+
+/*############################## 				DIV-2				TITLE SEARCH                        #######################*/
+
+
+.title-search{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-search div:last-child {
+  margin-left: auto;
+}
+
+.home-title{
+	padding-top: 3%;
+	padding-left: 1%;
+}
+
+.search{
+	padding-top: 3%;
+	padding-right: 2%;
+}
+
+.title{
+
+  font-style: large;
+  font-weight: 900;
+  font-size: 2.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1A3C6F;;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.search-label {
+  border: 0;
+  /*margin-right: 20px;*/
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; }
+
+
+.search-input {
+
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0.3rem 2px;
+
+  /*margin-top: 20px;*/
+  /*margin-right: 40px;*/
+
+  display: block;
+  height: 1.5rem;
+  width:20rem;
+  max-width: 100%;
+  border-radius: 10rem;
+  font-size: 1.3rem;
+  /*float: right;*/
+
+}
+
+.search-input::-webkit-input-placeholder {
+color: #2e2d29;
+opacity: 1; }
+.search-input:-ms-input-placeholder {
+color: #2e2d29;
+opacity: 1; }
+.search-input::-ms-input-placeholder {
+color: #2e2d29;
+opacity: 1; }
+.search-input::placeholder {
+color: #2e2d29;
+opacity: 1; }
+
+.search-submit {
+  padding-right: 10px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMS40NzM3IDEwLjIwMTZDMjEuNDczNyAxNC4wMzg1IDE4LjM2MzIgMTcuMTQ5IDE0LjUyNjMgMTcuMTQ5QzEwLjY4OTQgMTcuMTQ5IDcuNTc4OTUgMTQuMDM4NSA3LjU3ODk1IDEwLjIwMTZDNy41Nzg5NSA2LjM2NDY2IDEwLjY4OTQgMy4yNTQyMiAxNC41MjYzIDMuMjU0MjJDMTguMzYzMiAzLjI1NDIyIDIxLjQ3MzcgNi4zNjQ2NiAyMS40NzM3IDEwLjIwMTZaTTI0IDEwLjIwMTZDMjQgMTUuNDMzOCAxOS43NTg1IDE5LjY3NTMgMTQuNTI2MyAxOS42NzUzQzEyLjUwMjkgMTkuNjc1MyAxMC42Mjc3IDE5LjA0MDkgOS4wODg2MiAxNy45NjAzTDIuMTE5OTQgMjQuMzkyOUMxLjYwNzMyIDI0Ljg2NjEgMC44MDgxNzUgMjQuODM0MSAwLjMzNDk5MSAyNC4zMjE1Qy0wLjEzODE5MiAyMy44MDg5IC0wLjEwNjIyNiAyMy4wMDk4IDAuNDA2Mzg5IDIyLjUzNjZMNy4yMjY3OSAxNi4yNDA4QzUuODY4ODIgMTQuNjAxMyA1LjA1MjY0IDEyLjQ5NjggNS4wNTI2NCAxMC4yMDE2QzUuMDUyNjQgNC45Njk0MiA5LjI5NDE1IDAuNzI3OTA1IDE0LjUyNjMgMC43Mjc5MDVDMTkuNzU4NSAwLjcyNzkwNSAyNCA0Ljk2OTQyIDI0IDEwLjIwMTZaIiBmaWxsPSIjMkUyRDI5Ii8+Cjwvc3ZnPgo=) no-repeat 0 0;
+  opacity: 0.6;
+  position: absolute;
+  padding-top: 15px;
+  top: 2.6rem;
+  right: 2.3rem;
+  width: 30px;
+  height: 28px;
+}
+
+.search-submit:hover, .search-submit:active, .search-submit:focus {
+background-color: transparent;
+opacity: 1; }
+.search-submit:active, .search-submit:focus {
+-webkit-box-shadow: none;
+        box-shadow: none; }
+.search-submit:focus {
+outline: #aaa solid 3px;
+ outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+/*############################## 		DIV-3						CALENDAR      FEATURED                        #######################*/
+
+
+
+#calender-featured{
+
+  display: flex;
+  position: relative;
+  margin-top: 1.3%;
+  background: rgb(51,51,51); /* Fallback for older browsers without RGBA-support */
+  background: rgba(13, 135, 165, 1);
+  justify-content: space-between;
+  /*background-image: url("https://www.iiitb.ac.in/includefiles/userfiles/images/iiitb_logo.jpg");*/
+  background-size: 1000px;
+  /*background: -webkit-gradient(linear, left bottom, left top, from(#1A63A7), color-stop(0%, transparent));*/
+    /*background: linear-gradient(to bottom, #1A63A7, transparent 100%);*/
+    background-color: #4a8594;
+}
+
+.calender-featured div:last-child {
+  margin-left: auto;
+}
+
+
+#calender-featured>div:first-child {
+    width: 70%;
+}
+#calender-featured>div:nth-child(2) {
+    width: 30%;
+}
+
+#feature-title p{
+
+  padding-left: 6%;
+/*   font-weight: 400; */
+  font-size: 1em;
+   line-height: 1.2; 
+  margin-bottom: 0;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 0 6px;
+   /*height: 3.2rem; */
+}
+
+#feature-title p.title1{
+  font-family: "Roboto Slab", "Georgia", "Times", "Times New Roman", serif;
+      font-size: 1.6em;
+      font-weight: 600;
+}
+
+
+
+#calendar
+{
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+.datepicker {
+  /*position: absolute;*/
+  margin: 0;
+  padding: 2px;
+  /*margin-top: -11%;*/
+  /*margin-left:52rem;*/
+  background-color: #fff;
+  /*float: right;*/
+}
+
+.su-main-nav--mobile-search{
+  display: none;
+}
+
+
+/*############################## 			DIV-4					CONTENT   MENU                       #######################*/
+
+
+
+#content-menu{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #dbe0e3;	
+}
+#content-menu>div:first-child {
+    width: 8%;
+}
+#content-menu>div:nth-child(2) {
+    width: 60%;
+}
+
+#content-menu>div:last-child {
+    width: 25%;
+}
+
+
+#su-main-nav{
+  padding-right: 30px;
+  padding-top: 25px;
+   border-style : outset;
+   height: max-content;
+   border-color: grey;
+   background-color: #dbe0e3;
+
+}
+
+#dp2 {
+  display: none;
+}
+
+.menu2{
+  margin-bottom: 10px;
+}
+
+.main-menu{
+	padding: 0;
+	list-style: none;
+	background: #dbe0e3;
+	margin-left: 20px;
+}
+.main-menu li{
+    display: inline-block;
+    position: relative;
+    /*line-height: 51px;*/
+    height: fit-content;
+    text-align: left;
+    background-color: #4a8594;
+    /*background: rgba(13, 135, 165, 1);*/
+    width:100%;
+}
+
+.main-menu li a{
+    display: block;
+    padding: 8px 65px;
+    color: #333;
+    text-decoration: none;
+}
+.main-menu li a:hover{
+    color: #fff;
+    background: #939393;
+}
+.main-menu li ul.dropdown{
+    /*min-width: 100%;   */
+    /*background: #f2f2f2;*/
+    /*background-color: #fff;*/
+    display: none;
+
+    /*position: absolute;*/
+    /*z-index: 999;*/
+    /*left: 0;*/
+}
+.main-menu li:hover ul.dropdown{
+    display: block;	/* Display the dropdown */
+}
+.main-menu	 li ul.dropdown li{
+    display: block;
+}
+
+
+.su-card{
+  display: flex;
+  /*padding-left: 5%;*/
+  border-style : outset;
+  margin-bottom: 3%;
+  margin-right: 3%;
+  margin-left: 1%;
+  color: black;
+  /*background: rgba(13, 135, 165, 1);*/
+  background:#fff;
+}
+
+
+.su-card>div:first-child {
+    width: 30%;
+}
+
+.su-card>div:last-child {
+    width: 65%;
+}
+
+img{ 
+width: 100%; 
+height: 100%; 
+}

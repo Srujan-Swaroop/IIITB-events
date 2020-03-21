@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>CKEditor</title>
+                <link rel="stylesheet" href="addevent.css">
+                <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+        </head>
+        <body>
+                <form action="/action_page.php">
+                    <label for="fname">Title</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Title of the Event.."><br>
+
+                    <label for="lname">Date</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Date and Time of the Event.."><br>
+
+                    <label for="lname">Location</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Location of the Event.."><br>
+
+                    <label for="country">Category</label>
+                    <select id="country" name="country">
+                      <option value="australia">Sports</option>
+                      <option value="canada">Academic</option>
+                      <option value="usa">Samvaad</option>
+                    </select><br>
+                  
+                    <input type="submit" value="Submit">
+                  </form>
+                <h1>Enter the details of the event</h1>
+                <textarea name="editor1"></textarea>
+                <script>
+                        CKEDITOR.replace( 'editor1' );
+                </script>
+                <p>
+                    <input type="submit">
+                </p>
+        </body>
+</html>

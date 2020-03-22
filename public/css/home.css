@@ -93,6 +93,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 .title-search div:last-child {
@@ -121,9 +122,23 @@
   text-decoration: none;
 }
 
-.search-label {
+input[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMS40NzM3IDEwLjIwMTZDMjEuNDczNyAxNC4wMzg1IDE4LjM2MzIgMTcuMTQ5IDE0LjUyNjMgMTcuMTQ5QzEwLjY4OTQgMTcuMTQ5IDcuNTc4OTUgMTQuMDM4NSA3LjU3ODk1IDEwLjIwMTZDNy41Nzg5NSA2LjM2NDY2IDEwLjY4OTQgMy4yNTQyMiAxNC41MjYzIDMuMjU0MjJDMTguMzYzMiAzLjI1NDIyIDIxLjQ3MzcgNi4zNjQ2NiAyMS40NzM3IDEwLjIwMTZaTTI0IDEwLjIwMTZDMjQgMTUuNDMzOCAxOS43NTg1IDE5LjY3NTMgMTQuNTI2MyAxOS42NzUzQzEyLjUwMjkgMTkuNjc1MyAxMC42Mjc3IDE5LjA0MDkgOS4wODg2MiAxNy45NjAzTDIuMTE5OTQgMjQuMzkyOUMxLjYwNzMyIDI0Ljg2NjEgMC44MDgxNzUgMjQuODM0MSAwLjMzNDk5MSAyNC4zMjE1Qy0wLjEzODE5MiAyMy44MDg5IC0wLjEwNjIyNiAyMy4wMDk4IDAuNDA2Mzg5IDIyLjUzNjZMNy4yMjY3OSAxNi4yNDA4QzUuODY4ODIgMTQuNjAxMyA1LjA1MjY0IDEyLjQ5NjggNS4wNTI2NCAxMC4yMDE2QzUuMDUyNjQgNC45Njk0MiA5LjI5NDE1IDAuNzI3OTA1IDE0LjUyNjMgMC43Mjc5MDVDMTkuNzU4NSAwLjcyNzkwNSAyNCA0Ljk2OTQyIDI0IDEwLjIwMTZaIiBmaWxsPSIjMkUyRDI5Ii8+Cjwvc3ZnPgo=) no-repeat 0 0;
+  background-color: white;
+
+  /*background-image: url('searchicon.png');*/
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+/*.search-label {
   border: 0;
-  /*margin-right: 20px;*/
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(100%);
           clip-path: inset(100%);
@@ -133,29 +148,23 @@
   position: absolute;
   white-space: nowrap;
   width: 1px; }
+*/
 
-
-.search-input {
+/*.search-input {
 
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0.3rem 2px;
-
-  /*margin-top: 20px;*/
-  /*margin-right: 40px;*/
-
   display: block;
   height: 1.5rem;
   width:20rem;
   max-width: 100%;
   border-radius: 10rem;
   font-size: 1.3rem;
-  /*float: right;*/
-
 }
-
-.search-input::-webkit-input-placeholder {
+*/
+/*.search-input::-webkit-input-placeholder {
 color: #2e2d29;
 opacity: 1; }
 .search-input:-ms-input-placeholder {
@@ -167,8 +176,8 @@ opacity: 1; }
 .search-input::placeholder {
 color: #2e2d29;
 opacity: 1; }
-
-.search-submit {
+*/
+/*.search-submit {
   padding-right: 10px;
   background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMS40NzM3IDEwLjIwMTZDMjEuNDczNyAxNC4wMzg1IDE4LjM2MzIgMTcuMTQ5IDE0LjUyNjMgMTcuMTQ5QzEwLjY4OTQgMTcuMTQ5IDcuNTc4OTUgMTQuMDM4NSA3LjU3ODk1IDEwLjIwMTZDNy41Nzg5NSA2LjM2NDY2IDEwLjY4OTQgMy4yNTQyMiAxNC41MjYzIDMuMjU0MjJDMTguMzYzMiAzLjI1NDIyIDIxLjQ3MzcgNi4zNjQ2NiAyMS40NzM3IDEwLjIwMTZaTTI0IDEwLjIwMTZDMjQgMTUuNDMzOCAxOS43NTg1IDE5LjY3NTMgMTQuNTI2MyAxOS42NzUzQzEyLjUwMjkgMTkuNjc1MyAxMC42Mjc3IDE5LjA0MDkgOS4wODg2MiAxNy45NjAzTDIuMTE5OTQgMjQuMzkyOUMxLjYwNzMyIDI0Ljg2NjEgMC44MDgxNzUgMjQuODM0MSAwLjMzNDk5MSAyNC4zMjE1Qy0wLjEzODE5MiAyMy44MDg5IC0wLjEwNjIyNiAyMy4wMDk4IDAuNDA2Mzg5IDIyLjUzNjZMNy4yMjY3OSAxNi4yNDA4QzUuODY4ODIgMTQuNjAxMyA1LjA1MjY0IDEyLjQ5NjggNS4wNTI2NCAxMC4yMDE2QzUuMDUyNjQgNC45Njk0MiA5LjI5NDE1IDAuNzI3OTA1IDE0LjUyNjMgMC43Mjc5MDVDMTkuNzU4NSAwLjcyNzkwNSAyNCA0Ljk2OTQyIDI0IDEwLjIwMTZaIiBmaWxsPSIjMkUyRDI5Ii8+Cjwvc3ZnPgo=) no-repeat 0 0;
   opacity: 0.6;
@@ -190,7 +199,7 @@ opacity: 1; }
 outline: #aaa solid 3px;
  outline: -webkit-focus-ring-color auto 5px;
 }
-
+*/
 
 /*############################## 		DIV-3						CALENDAR      FEATURED                        #######################*/
 
@@ -200,7 +209,7 @@ outline: #aaa solid 3px;
 
   display: flex;
   position: relative;
-  margin-top: 1.3%;
+  /*margin-top: 1.3%;*/ 
   background: rgb(51,51,51); /* Fallback for older browsers without RGBA-support */
   background: rgba(13, 135, 165, 1);
   justify-content: space-between;
@@ -353,25 +362,139 @@ outline: #aaa solid 3px;
 .su-card{
   display: flex;
   /*padding-left: 5%;*/
-  border-style : outset;
+  border-style : opacity;
   margin-bottom: 3%;
-  margin-right: 3%;
-  margin-left: 1%;
+  /*margin-right: 3%;*/
+  /*margin-left: 1%;*/
   color: black;
   /*background: rgba(13, 135, 165, 1);*/
   background:#fff;
+  /*background-image: url(https://www.iiitb.ac.in/includefiles/userfiles/images/iiitb_logo.jpg);*/
 }
+.su-card__contents{
+  /*background:rgba(0,0,0,.3);*/
+  padding: 1rem 0rem 0 2rem;
+  text-decoration: none;
+}
+
+.events{
+  text-decoration:none;
+}
+
+.event-category {
+    background: #c41230;
+    border-radius: 1em;
+    color: #fff;
+    display: inline-block;
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 1;
+    min-width: 3.5rem;
+    padding: 0.3rem 0.8rem 0.2rem 0.8rem;
+    /*white-space: nowrap;*/
+}
+.event-date{
+   background: #f26522;
+    border-radius: 1em;
+    color: #fff;
+    display: inline-block;
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 1;
+    min-width: 3.5rem;
+    padding: 0.3rem 0.8rem 0.2rem 0.8rem;
+    white-space: nowrap;
+}
+.event-location{
+  background: #EE377D;
+    border-radius: 1em;
+    color: #fff;
+    display: inline-block;
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 1;
+    min-width: 3.5rem;
+    padding: 0.3rem 0.8rem 0.2rem 0.8rem;
+    white-space: nowrap;
+}
+
 
 
 .su-card>div:first-child {
-    width: 30%;
+    width: 20%;
 }
 
 .su-card>div:last-child {
-    width: 65%;
+    width: 80%;
 }
+
 
 img{ 
 width: 100%; 
 height: 100%; 
+}
+
+
+
+
+
+
+/*##############################      DIV-4         EVENT PAGE                       #######################*/
+
+
+
+
+/*#talk-details{
+  margin-top: 10px;
+  background-color: cadetblue;
+  background-color: #ffc168;
+}*/
+
+
+.talk-title{
+  margin-top: 10px;
+  padding-top:1px;
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 1px;
+  background-color: #c41230;
+
+}
+.date{
+  padding: 1px 0 1px 0;
+  background-color: #f26522;
+  text-align: center;  
+
+}
+.place
+{
+  padding: 1px 0 1px 0;
+  background: #EE377D;
+  text-align: center;  
+
+}
+
+
+#img-detail{
+  display: flex;
+  justify-content: space-between;
+}
+#img-detail>div:first-child{
+  width:30%;
+}
+
+#img-detail>div:last-child{
+  width:65%;
+}
+
+.event-img img{
+  /*padding-top: 10%;*/
+  /*border-style : outset;*/
+}
+.event-abstract{
+  padding-top: 10%;
+  color: dark black;
+  font-size: 20px;
+  font: 'serif';
+  /*border-style: outset;*/
 }

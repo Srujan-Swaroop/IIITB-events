@@ -1,4 +1,4 @@
-# Srujan is the team leader
+# Command to run : nodemon server.js
 
 ## 1. Srujan and Puneeth to write the frontend by comparing with Stanford website.
 

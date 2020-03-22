@@ -16,4 +16,4 @@ node server.js
 npm install -g nodemon
 ````
 1. If you get any error while installing nodemon, try again using _**sudo**_.
-1. The website will be accessible on port *3333*.
+1. The website will be accessible on port *4000*.

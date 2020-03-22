@@ -13,8 +13,8 @@
     // mongoose.connect('mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu');     // connect to mongoDB database on modulus.io
 
     app.use(express.static(__dirname + '/public'));
-    // app.use(express.static(__dirname + '/css'));
-    // app.use(express.static(__dirname + '/js'));                 // set the static files location /public/img will be /img for users
+    app.use(express.static(__dirname + '/public' + '/css'));
+    app.use(express.static(__dirname + '/public' + '/js'));                 // set the static files location /public/img will be /img for users
                      // set the static files location /public/img will be /img for users
                      // set the static files location /public/img will be /img for users
     // app.use(morgan('dev'));                                         // log every request to the console
@@ -90,4 +90,4 @@
 
     // listen (start app with node server.js) ======================================
     app.listen(4000);
-    console.log("App listening on port 3030");
+    console.log("App listening on port 4000");

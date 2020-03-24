@@ -2,12 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
 	<link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="datepicker.css" />
+  	<link rel="stylesheet" href="datepicker.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
-  <script src="datepicker.js"></script>
+  	<script src="datepicker.js"></script>
+
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+  	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+
+
     <title>IIITB Events</title>
   </head>
   <body class="body-page">
@@ -21,18 +29,36 @@
 	      			<a href="/">
 	          			<img src="https://www.iiitb.ac.in/includefiles/userfiles/images/IIITB-invert-logo.png" class="iiitb_logo" alt="IIITB">
 	        		</a>
-				</div>
+				    </div>
 
 	            <div class="text">
 	            	<a class="iiitb-logo-text" href="/">Events</a>
 	            </div>
 
 	            <div class="login">
-	        		<a href="/login/" class="login-button-manager">Log In<i class="fas fa-sign-in-alt"></i></a>
-
+	        		<a href="/login.html" class="login-button-manager">Log In<i class="fas fa-sign-in-alt"></i></a>
 	            </div>
-
       		</div>
+
+          <div id="main-events">
+          	<ul class="main-menu1">
+          	  <li ><a class="nav-link active" href="#">SPANDAN</a></li>
+          	  <li class="nav-item dropdown">
+          	    <a href="#">RISE</a>
+          	    <ul class="dropdown">
+          	      <a class="dropdown-item" href="#">SPANDAN 2018</a>
+          	      <a class="dropdown-item" href="#">SPANDAN 2019</a>
+          	      <a class="dropdown-item" href="#">SPANDAN 2020</a>
+          	    </ul>
+          	  </li>
+          	  <li ><a  href="#">SANGAM</a></li>
+          	  <li ><a  href="#">YAMINI</a></li>
+          	  <li ><a  href="#">INFIN8</a></li>
+          	  <li ><a  href="#">FOUNDATION DAY</a></li>
+          	  <li ><a  href="#">CONVOCATION DAY</a></li>
+          	</ul>
+            
+          </div>
 
         	<div class="title-search" role="search">
 
@@ -42,9 +68,9 @@
 
         		<div class="search">
         			<form action="/jse/jsp/search.jsp" method="get" accept-charset="UTF-8">
-						<label class="search-label" for="search-field">Search for events</label>
+						<!-- <label class="search-label" for="search-field">Search for events</label> -->
 						<input type="text" id="search-field" name="q" class="search-input" placeholder="Search for events" maxlength="128">
-						<button type="submit" name="search" class="search-submit" aria-label="Search"></button>
+						<!-- <button type="submit" name="search" class="search-submit" aria-label="Search"></button> -->
 					</form>
         		</div>
 
@@ -104,30 +130,32 @@
       		<div class="event-catalog">
 
 
-            <a href="/events/845/84539" class="events">
+            <a href="events/event1.html" class="events">
 	            <div class="su-card su-card--horizontal">
-                
+
                 <div>
-                  <img src="iiitb.png" alt="">  
+                  <img src="iiitb.png" alt="">
                 </div>
 
 	              <div class="su-card__contents">
+
+		              <h2>Dawn Harms and the Rhythm Sisters: Adventures in Music</h2>
 		              <p class="event-category">Performance</p>
-		              <h3>Dawn Harms and the Rhythm Sisters: Adventures in Music</h3>
-		              <p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 9:30 am</span></p>
+                  <p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 9:30 am</span></p>
 		              <p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Dinkelspiel Auditorium</span></p>
 	                </div>
 	              </div>
             </a>
 
-            <a href="/events/868/86883" class="events">
+            <a href="events/event1.html" class="events">
 	      		<div class="su-card su-card--horizontal">
                <div>
-                  <img src="iiitb.png" alt="">  
+                  <img src="iiitb.png" alt="">
                 </div>
 	      		    <div class="su-card__contents">
-		      			<p class="event-category">Seminar</p>
 		      			<h3>“Crazy Rich Asians”?: Southeast Asia's Billionaires and Their Business Empires in the Age of China's</h3>
+                <p class="event-category">Seminar</p>
+
 		      			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 12:00 pm</span></p>
 		      			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Philippines Conference Room</span></p>
 	                </div>
@@ -136,13 +164,13 @@
 
 
       	    <a href="/events/847/84726" class="events">
-      		<div class="su-card su-card--horizontal">             
+      		<div class="su-card su-card--horizontal">
             <div>
-                  <img src="iiitb.png" alt="">  
+                  <img src="iiitb.png" alt="">
                 </div>
       		    <div class="su-card__contents">
-      			<p class="event-category">Performance</p>
       			<h3>David Pershall, baritone: Voice Masterclass</h3>
+            <p class="event-category">Performance</p>
       			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 4:30 pm</span></p>
       			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Campbell Recital Hall</span></p>
                           </div>
@@ -153,14 +181,14 @@
       	    <a href="/events/862/86292" class="events">
       		<div class="su-card su-card--horizontal">
              <div>
-                  <img src="iiitb.png" alt="">  
-                </div>
+                  <img src="iiitb.png" alt="">
+              </div>
       		    <div class="su-card__contents">
-      			<p class="event-category">Seminar</p>
-      			<h3>AI for Good Seminar Series - AI for Human Rights</h3>
-      			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 4:30 pm</span></p>
-      			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>William R. Hewlett Teaching Center (Room 200) - 370 Serra Mall, IIITB, CA 94305</span></p>
-                          </div>
+          			<h3>AI for Good Seminar Series - AI for Human Rights</h3>
+                <p class="event-category">Seminar</p>
+          			<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 4:30 pm</span></p>
+          			<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>William R. Hewlett Teaching Center (Room 200  </span></p>
+              </div>
       		</div>
       	    </a>
 
@@ -168,7 +196,7 @@
       	    <a href="/events/853/85300" class="events">
       		<div class="su-card su-card--horizontal">
              <div>
-                  <img src="iiitb.png" alt="">  
+                  <img src="iiitb.png" alt="">
                 </div>
       		    <div class="su-card__contents">
       			<p class="event-category">Lecture / Reading</p>
@@ -183,7 +211,7 @@
       	    <a href="/events/866/86673" class="events">
       		<div class="su-card su-card--horizontal">
              <div>
-                  <img src="iiitb.png" alt="">  
+                  <img src="iiitb.png" alt="">
                 </div>
       		    <div class="su-card__contents">
       			<p class="event-category">Lecture / Reading</p>

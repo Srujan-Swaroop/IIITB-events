@@ -84,6 +84,60 @@
 }
 
 
+/*##############################        DIV-2       MAIN EVENTS                        #######################*/
+
+
+#main-events{
+  margin-top: 10px;
+  background-color: #4a8594;  
+}
+
+
+.main-menu1{
+  padding: 0;
+  background: #dbe0e3;
+  display: table;
+
+  /*margin-left: 20px;*/
+}
+.main-menu1 li{
+    display: table-cell;
+    position: relative;
+    width: fit-content;
+    text-align: left;
+    background-color: #4a8594;
+    /*background: rgba(13, 135, 165, 1);*/
+    /*width:100%;*/
+}
+
+.main-menu1 li a{
+    display: block;
+    padding: 10px 50px;
+    color: #fff;
+    text-decoration: none;
+}
+.main-menu1 li a:hover{
+    color: #fff;
+    background: #939393;
+}
+.main-menu1 li ul.dropdown{
+    /*min-width: 100%;   */
+    /*background: #f2f2f2;*/
+    /*background-color: #fff;*/
+    display: none;
+    /*padding: 10px 50px;*/
+    /*position: absolute;*/
+    /*z-index: 999;*/
+    /*left: 0;*/
+}
+.main-menu1 li:hover ul.dropdown{
+    display: table-cell; /* Display the dropdown */
+}
+.main-menu1   li ul.dropdown li{
+    display: table-cell;    
+}
+
+
 
 
 /*############################## 				DIV-2				TITLE SEARCH                        #######################*/
@@ -101,12 +155,12 @@
 }
 
 .home-title{
-	padding-top: 3%;
+	/*padding-top: 3%;*/
 	padding-left: 1%;
 }
 
 .search{
-	padding-top: 3%;
+	/*padding-top: 3%;*/
 	padding-right: 2%;
 }
 
@@ -439,62 +493,3 @@ height: 100%;
 
 
 
-/*##############################      DIV-4         EVENT PAGE                       #######################*/
-
-
-
-
-/*#talk-details{
-  margin-top: 10px;
-  background-color: cadetblue;
-  background-color: #ffc168;
-}*/
-
-
-.talk-title{
-  margin-top: 10px;
-  padding-top:1px;
-  text-align: center;
-  font-size: 20px;
-  padding-bottom: 1px;
-  background-color: #c41230;
-
-}
-.date{
-  padding: 1px 0 1px 0;
-  background-color: #f26522;
-  text-align: center;  
-
-}
-.place
-{
-  padding: 1px 0 1px 0;
-  background: #EE377D;
-  text-align: center;  
-
-}
-
-
-#img-detail{
-  display: flex;
-  justify-content: space-between;
-}
-#img-detail>div:first-child{
-  width:30%;
-}
-
-#img-detail>div:last-child{
-  width:65%;
-}
-
-.event-img img{
-  /*padding-top: 10%;*/
-  /*border-style : outset;*/
-}
-.event-abstract{
-  padding-top: 10%;
-  color: dark black;
-  font-size: 20px;
-  font: 'serif';
-  /*border-style: outset;*/
-}

@@ -19,6 +19,17 @@
   justify-content: space-between;
 }
 
+.logo-login div:nth-child(2) {
+    /*margin-left: auto;*/
+}
+
+.logo-login div:nth-child(3) {
+  
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  position: relative;
+} 
+
 .logo-login div:last-child {
   margin-left: auto;
 }
@@ -48,16 +59,18 @@
 
 }
 
-.login
+
+.add-event
 {
-	padding-right: 10px;
-	padding-top: 20px;
+  padding-right: 10px;
+  padding-top: 20px;
+  /*padding-bottom: 10px;*/
 }
 
 
-.login-button-manager{
+.add_event-manager{
   /*position: absolute;*/
-  width: 90px;
+  width: 130px;
   height: 20px;
   background-color: #1A3C6F;
   display: inline-block;
@@ -68,6 +81,43 @@
   text-transform: none;
   text-decoration: none;
   line-height: 0.9;
+
+   /*margin-top: 22px; */
+   /*margin-right: 20px; */
+
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+
+   padding-top: 10px;
+   padding-right: 20px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+/*   float:right; */
+}
+
+
+
+.login
+{
+	padding-right: 10px;
+	padding-top: 30px;
+}
+
+
+.login-button-manager{
+  /*position: absolute;*/
+  width: 130px;
+  height: 40%;
+  background-color: #1A3C6F;
+  display: inline-block;
+  font-family: 'Serif', 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
+  font-style: large;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+  /*line-height: 0.9;*/
 
    /*margin-top: 22px; */
    /*margin-right: 20px; */

@@ -4,10 +4,15 @@
     <meta charset="utf-8">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
 	<link rel="stylesheet" href="home.css">
-  	<link rel="stylesheet" href="datepicker.css" />
+	<link rel="stylesheet" href="datepicker.css" />
+	<link rel="stylesheet" href="calendar.css" />
+	<link rel="stylesheet" href="event_slider.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
-  	<script src="datepicker.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<script src="datepicker.js"></script>
+		<script src="calendar.js"></script>
+		<script src="event_slider.js"></script>
 
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
@@ -79,7 +84,7 @@
 
 			</div>
 
-       	 	<div id="calender-featured">
+       	 	<!-- <div id="calender-featured">
 
 
             	<div id="feature-title">
@@ -87,7 +92,7 @@
                 	<p>Events and things to do from across campus</p>
               	</div>
 
-              	<div id="calendar">
+              	<div id="calendar11">
 
 	                <div id="dp1" class="datepicker" aria-hidden="false">
 	                  <div class="month-wrap">
@@ -123,7 +128,127 @@
 
               	</div>
 
-       		</div>
+					 </div> -->
+					 <!-- <div id="feature-title">
+							<p class="title1">See what's going on at IIITB</p>
+							<p>Events and things to do from across campus</p>
+						</div> -->
+						<div class="w3-container">
+							<h2>See what's going on at IIITB</h2>
+							<p>Events and things to do from across campus</p>
+						</div>
+					 <div id="calender-featured">
+						<!-- <div id="feature-title">
+							<p class="title1">See what's going on at IIITB</p>
+							<p>Events and things to do from across campus</p>
+						</div> -->
+						<!-- <div class="w3-container">
+							<h2>Slideshow Indicators</h2>
+							<p>An example of using buttons to indicate how many slides there are in the slideshow, and which slide the user is currently viewing.</p>
+						</div> -->
+						
+						<div class="w3-content w3-display-container" style="max-width:800px">
+							<!-- <img class="mySlides" src="tmp/nature1.jpg" style="width:100%">
+							<img class="mySlides" src="tmp/nature2.jpg" style="width:100%">
+							<img class="mySlides" src="tmp/nature3.jpg" style="width:100%"> -->
+							<div class="mySlides" style="width: 100%;">
+								<a href="events/event1.html" class="events">
+									<div class="su-card su-card--horizontal">
+										<!-- <div class="mySlides"> -->
+		
+										<div>
+											<img src="iiitb.png" alt="">
+										</div>
+		
+										<div class="su-card__contents">
+		
+											<h2>Dawn Harms and the Rhythm Sisters: Adventures in Music</h2>
+											<p class="event-category">Performance</p>
+											<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 9:30 am</span></p>
+											<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Dinkelspiel Auditorium</span></p>
+											</div>
+										</div>
+								</a>
+							</div>
+
+							<div class="mySlides" style="width: 100%;">
+								<a href="events/event1.html" class="events">
+									<div class="su-card su-card--horizontal">
+										<!-- <div class="mySlides"> -->
+		
+										<div>
+											<img src="iiitb.png" alt="">
+										</div>
+		
+										<div class="su-card__contents">
+		
+											<h2>Dawn Harms and the Rhythm Sisters: Adventures in Music</h2>
+											<p class="event-category">Performance</p>
+											<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 9:30 am</span></p>
+											<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Dinkelspiel Auditorium</span></p>
+											</div>
+										</div>
+								</a>
+							</div>
+							
+							<div class="mySlides" style="width: 100%">
+								<a href="events/event1.html" class="events">
+								<div class="su-card su-card--horizontal">
+									<!-- <div class="mySlides"> -->
+									<div>
+											<img src="iiitb.png" alt="">
+										</div>
+										<div class="su-card__contents">
+										<h3>“Crazy Rich Asians”?: Southeast Asia's Billionaires and Their Business Empires in the Age of China's</h3>
+										<p class="event-category">Seminar</p>
+		
+										<p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 12:00 pm</span></p>
+										<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Philippines Conference Room</span></p>
+											</div>
+								</div>
+							</a>
+						</div>
+							<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+								<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+								<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+							</div>
+						</div>
+						<div class="calendar" id="calendar">
+							<div class="calendar-btn month-btn" onclick="$('#months').toggle('fast')">
+									<span id="curMonth"></span>
+									<div id="months" class="months dropdown"></div>
+							</div>
+					
+							<div class="calendar-btn year-btn" onclick="$('#years').toggle('fast')">
+									<span id="curYear"></span>
+									<div id="years" class="years dropdown"></div>
+							</div>
+					
+							<div class="clear"></div>
+					
+							<div class="calendar-dates">
+									<div class="days">
+											<div class="day label">SUN</div>
+											<div class="day label">MON</div>
+											<div class="day label">TUE</div>
+											<div class="day label">WED</div>
+											<div class="day label">THU</div>
+											<div class="day label">FRI</div>
+											<div class="day label">SAT</div>
+					
+											<div class="clear"></div>
+									</div>
+					
+									<div id="calendarDays" class="days">
+									</div>
+							</div>
+					</div>
+				</div>
+				
+										
       	</div>
 
 

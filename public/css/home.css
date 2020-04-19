@@ -107,8 +107,8 @@
 
 .login-button-manager{
   /*position: absolute;*/
-  width: 130px;
-  height: 40%;
+  /* width: 160px; */
+  /* height: 40%; */
   background-color: #1A3C6F;
   display: inline-block;
   font-family: 'Serif', 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;

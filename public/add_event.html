@@ -1,103 +1,255 @@
 <!DOCTYPE html>
-<html>
-        <head>
-                <meta charset="utf-8">
-                <title>ADD_EVENT</title>
-                <link rel="stylesheet" href="css/addevent.css">
-                <link rel="stylesheet" href="home.css">
-                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
+<html lang="en" ng-app="scotchTodo" >
 
-                <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-        </head>
-        <body>
+  <head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="datepicker.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
 
+    <script src="datepicker.js"></script>
+	<title>IIITB Events</title>
 
-                        <div class="logo-login">
-
-                            <div class ="logo">
-                                <a href="/">
-                                    <img src="https://www.iiitb.ac.in/includefiles/userfiles/images/IIITB-invert-logo.png" class="iiitb_logo" alt="IIITB">
-                                </a>
-                                </div>
-
-                            <div class="text">
-                                <a class="iiitb-logo-text" href="/">Events</a>
-                            </div>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script><!-- load angular-route -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
 
 
-                            <div class="login">
-                              <a href="/add_event.html" class="login-button-manager" style="width: 140px; height: 40%;">Add Event 
-                                <i class="fas fa-calendar-alt"></i>
-                              </a>
-                              <a href="/login.html" class="login-button-manager" style="width: 100px; height: 40%;">Log In
-                                <i class="fas fa-sign-in-alt"></i>
-                              </a>
-                            </div>
+		
+	<script src="controllers/main.js"></script> <!-- load up our controller -->
 
+
+	<script src="services/todos.js"></script> <!-- load our todo service -->
+
+	<script src="core.js"></script> <!-- load our main application -->
+	<script src="routes/route.js"></script> <!-- load our routes  -->
+	<script src="controllers/login.js"></script> <!-- load up login controller -->
+	
+ 
+  <script src="https://kit.fontawesome.com/8c32dd2a48.js" crossorigin="anonymous">
+  </script>
+      <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+      <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+
+       <script type="text/javascript">
+                bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+          </script>
+        
+  
+  <style>
+  
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+
+}
+
+.container {
+  background-color: #b9e8f0;
+  background-image: url("https://transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  padding: 5px 20px 15px 50px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=date] {
+  width: 40%;
+  /* margin-bottom: 70px; */
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type=time] {
+  width: 40%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=file] {
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+select {
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+textarea{
+  width: 80%;
+  height:200px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: #26c4e0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+
+.btn {
+  background-color: #12aeddd0;
+  color: white;
+  padding: 12px;
+  margin: 5px 0px 0px 200px;
+  border: 10px solid rgba(13, 187, 231, 0.712);
+  width: 30%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color:rgb(17, 193, 216);
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+  </head>
+ 
+  <body class="body-page" ng-controller="loginController">
+
+    <header>
+		<div class="header-background-manager">
+			<div class="logo-login">
+				<div class ="logo">
+					<a href="/" ng-click= "showLogin()">
+						<img src="https://www.iiitb.ac.in/includefiles/userfiles/images/IIITB-invert-logo.png" class="iiitb_logo" alt="IIITB">
+				    </a>
+			  	</div>
+			
+			  <div class="text">
+				  <a class="iiitb-logo-text" ng-click= "showLogin()" href="/">Events</a>
+			  </div>
+			  <div >
+				  
+			  <div class="login" ng-show = "IsVisible">
+				  <a href="/calendar.html" class="login-button-manager">Add Event</a>
+				  <a ng-click= "hideLogin()" href="#login" class="login-button-manager">Log In<i class="fas fa-sign-in-alt"></i></a>
+			  </div>  
+			</div>
+      </div>
+		</div>
+</header>
+
+  
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form action="/action_page.php">
+        
+          <div class="row">
+            <div class="col-50">
+              <h3><i class="fas fa-bullhorn"></i> Add Event </h3>
+              <label for="title"><i class="fas fa-book-reader"></i> Title </label>
+              <input type="text" id="title" name="title" placeholder="Enter the event's title">
+              <label for="speaker"><i class="fab fa-teamspeak"></i>Speaker </label>
+              <input type="text" id="speaker" name="speaker" placeholder="Enter the event's speaker name">
+              <label for="location"><i class="fas fa-map-marked-alt"></i> Venue </label>
+              <input type="text" id="location" name="location" placeholder="Enter the event's venue location">
+              <label for="image"><i class="fa fa-picture-o"></i> Image for the Event</label>
+              <input type="file" id="img" name="img" accept="image/*">
+              <label for="type"><i class="fas fa-chalkboard-teacher"></i> Category </label>
+    <select id="category" name="category">
+      <option value="spandan">Spandan</option>
+      <option value="rise">Rise</option>
+      <option value="thesis">Thesis</option>
+      <option value="samvaad">Samvaad</option>
+      <option value="placement">Placement</option>
+  
+    </select>
+  
+              <label for="date"><i class="fa fa-calendar"></i> Date of the event </label>
+              <input type="date" id="date" name="date">
+              <label for="starttime"><i class="far fa-clock"></i> Start time </label>
+              <input type="time" id="stime" name="stime" >
+              <label for="endtime"><i class="fas fa-clock"></i> End time </label>
+              <input type="time" id="etime" name="etime">
+              
+            
+                             <h3>Enter the abstract of the event</h1>
+                              <textarea name="area2" style="background-color:orange;">
+                                Some Initial Content was in this textarea
+                         </textarea><br />
+  
                         </div>
-
-                      <div id="main-events">
-                        <ul class="main-menu1">
-                          <li ><a class="nav-link active" href="#">RISE</a></li>
-                          <li class="nav-item dropdown">
-                            <a href="#">SPANDAN</a>
-                            <ul class="dropdown">
-                              <a class="dropdown-item" href="#">SPANDAN 2018</a>
-                              <a class="dropdown-item" href="#">SPANDAN 2019</a>
-                              <a class="dropdown-item" href="#">SPANDAN 2020</a>
-                            </ul>
-                          </li>
-                          <li ><a  href="#">SANGAM</a></li>
-                          <li ><a  href="#">YAMINI</a></li>
-                          <li ><a  href="#">INFIN8</a></li>
-                          <li ><a  href="#">FOUNDATION DAY</a></li>
-                          <li ><a  href="#">CONVOCATION DAY</a></li>
-                        </ul>
-                        
-                      </div>
-
-                        <div class="title-search" role="search">
-
-                            <div class="home-title">
-                                <a href="/" class = "title">IIITB Event Calender</a>
-                            </div>
-
-                            <div class="search">
-                                <form action="/jse/jsp/search.jsp" method="get" accept-charset="UTF-8">
-                                    <!-- <label class="search-label" for="search-field">Search for events</label> -->
-                                    <input type="text" id="search-field" name="q" class="search-input" placeholder="Search for events" maxlength="128">
-                                    <!-- <button type="submit" name="search" class="search-submit" aria-label="Search"></button> -->
-                                </form>
-                            </div>
-
-                        </div>
-
-                <form action="/action_page.php">
-                    <label for="fname">Title</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Title of the Event.."><br>
-
-                    <label for="lname">Date</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Date and Time of the Event.."><br>
-
-                    <label for="lname">Location</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Location of the Event.."><br>
-
-                    <label for="country">Category</label>
-                    <select id="country" name="country">
-                      <option value="australia">Sports</option>
-                      <option value="canada">Academic</option>
-                      <option value="usa">Samvaad</option>
-                    </select><br>
-                  
-                    <input type="submit" value="Submit">
-                  </form>
-                <h1>Enter the details of the event</h1>
-                <textarea name="editor1"></textarea>
-                <script>
-                        CKEDITOR.replace( 'editor1' );
-                </script>
-                <p>
-                    <input type="submit">
-                </p>
-        </body>
-</html>
+          </div>
+  
+          <input type="submit" value="Add Event" class="btn">
+        </form>
+      </div>
+    </div>
+   </div>
+  
+  </body>
+  </html>
+  

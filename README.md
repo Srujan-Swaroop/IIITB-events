@@ -19,9 +19,3 @@ node server.js
 ````
 The website will be running on port 4001.
 To open enter http://localhost:4001/ in your browser.
-1. You can also use _**Nodemon**_ to deploy the website, which is much better when comaperd to _**Node**_. To download it use this command
-````
-npm install -g nodemon
-````
-1. If you get any error while installing nodemon, try again using _**sudo**_.
-1. The website will be accessible on port *4000*.

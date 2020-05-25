@@ -13,10 +13,12 @@ source sampled.sql
 ````
 npm install
 ````
-1. You can deploy the website directly using the following command
+2. You can deploy the website directly using the following command
 ````
 node server.js
 ````
+The website will be running on port 4001.
+To open enter http://localhost:4001/ in your browser.
 1. You can also use _**Nodemon**_ to deploy the website, which is much better when comaperd to _**Node**_. To download it use this command
 ````
 npm install -g nodemon

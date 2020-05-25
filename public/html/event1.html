@@ -1,0 +1,48 @@
+
+  <head>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="event.css">
+  </head>
+  <body class="body-page">
+
+
+          <div id="img-talk-title">
+
+            <div class="img-time">
+              
+              <div class="img">
+                <img src="../iiitb.png" alt="" height="254px" width="254px">
+              </div>
+
+              <div id="date-time">
+
+                <div class="date">
+                  <h3><i class="fal fa-calendar-alt"></i><span>{{ clicked_event['Date'] }}</span></h3>
+                </div>
+                
+                <div class="place">
+                  <h3 ><i class="fas fa-map-marker-alt"></i><span>{{ clicked_event['Location'] }}</span></h3>
+                </div>
+
+                <div class="place">
+                  <h3>Speaker : Srujan Swaroop</h3>
+                </div>
+
+              </div>   
+            </div>
+            
+            <div class="event-img">
+
+              <div class="talk-title">
+                <h1>{{ clicked_event['Topic'] }}</h1>
+              </div>
+              <div class="event-abstract">
+                <h3>About the Event</h3>
+                <p ng-bind-html="event_abstract"></p>
+
+              </div>
+            </div>
+            
+          </div>
+
+  </body>

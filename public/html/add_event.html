@@ -1,0 +1,207 @@
+
+  <head>
+	<meta charset="utf-8">
+ 
+  <script src="https://kit.fontawesome.com/8c32dd2a48.js" crossorigin="anonymous">
+  </script>
+
+  
+        
+  
+  <style>
+  
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin-top: 50px ;
+  margin-bottom: 50px ;
+
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+
+}
+
+.container {
+  background-color: #dbe0e3;
+  padding: 5px 20px 15px 50px;
+  border: 5px solid rgb(17, 16, 16);
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=date] {
+  width: 40%;
+  /* margin-bottom: 70px; */
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type=time] {
+  width: 40%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=file] {
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+select {
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+textarea{
+  width: 80%;
+  height:200px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: #26c4e0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+
+.btn {
+  background-color: #12aeddd0;
+  color: white;
+  padding: 12px;
+  margin: 5px 0px 0px 200px;
+  border: 10px solid rgba(13, 187, 231, 0.712);
+  width: 30%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color:rgb(17, 193, 216);
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+  </head>
+ 
+	
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form name ="form" ng-submit= "submitevent()" >
+        
+          <div class="row">
+            <div class="col-50">
+              <h3><i class="fas fa-bullhorn"></i> Add Event </h3>
+              <label for="title"><i class="fas fa-book-reader"></i> Title </label>
+              <input type="text" id="title" ng-model="event.title" placeholder="Enter the event's title">
+              <label for="speaker"><i class="fab fa-teamspeak"></i> Speaker </label>
+              <input type="text" id="speaker" ng-model="event.speaker" placeholder="Enter the event's speaker name">
+              <label for="location"><i class="fas fa-map-marked-alt"></i> Venue </label>
+              <input type="text" id="location" ng-model="event.location" placeholder="Enter the event's venue location">
+              <label for="image"><i class="fa fa-picture-o"></i> Image for the Event</label>
+              <input type="file" ng-model="event.img" id="img" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" ng-required="true">
+              <label for="type"><i class="fas fa-chalkboard-teacher"></i> Category </label>
+    <select id="category" ng-model="event.category">
+      <option value="spandan">Spandan</option>
+      <option value="rise">Rise</option>
+      <option value="thesis">Thesis</option>
+      <option value="samvaad">Samvaad</option>
+      <option value="placement">Placement</option>
+  
+    </select>
+  
+              <label for="date"><i class="fa fa-calendar"></i> Date of the event </label>
+              <input type="date" id="date" ng-model="event.date">
+              <label for="starttime"><i class="far fa-clock"></i> Start time </label>
+              <input type="time" id="stime" ng-model="event.stime" >
+              <label for="endtime"><i class="fas fa-clock"></i> End time </label>
+              <input type="time" id="etime" ng-model="event.etime">
+              <label for="doc"><i class="fa fa-upload" aria-hidden="true"></i>Upload document for the Event</label>
+              <input type="file" ng-upload="uploaded_file = $file">
+
+              
+            
+              <h1>Enter the details of the event</h1>
+              <ng-ckeditor id="test" ng-model="event.editor1" 
+              ng-config="config"
+              ></ng-ckeditor>
+              {{htmlEditor}}
+        
+
+                        </div>
+          </div>
+  
+          <input  type="submit" value="Add Event" class="btn">
+        </form>
+      </div>
+    </div>
+   </div>
+  
+  </body>
+  </html>
+  

@@ -1,19 +1,108 @@
-.mySlides
-{
-    display:none
-}
 
-.w3-left, .w3-right, .w3-badge 
-{
-    cursor:pointer
-}
-
-.w3-badge 
-{
-    height:13px;width:13px;padding:0
-}
-
-.featureds
-{
-    display:none
-}
+            * {margin: 0; padding: 0;}
+ 
+            #container {
+             width: 1200px;
+             height:330px;
+             overflow: hidden;
+             margin: 50px auto;
+             background-color: #009cf0;
+             background-image: url("https://transparenttextures.com/patterns/3px-tile.png");
+             /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */             /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */            /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ box-shadow: 5px 5px 5px 5px grey;
+            
+            }
+            
+            .photobanner {
+              padding-top: 10px;
+              padding-bottom: 10px;
+              padding-right: 10px;
+              padding-left: 10px;
+             height: 300px;
+             width: 3550px;
+             margin-bottom: 80px;
+            }
+            
+            
+            .photobanner .content {
+              position: relative; /* Position the background text */
+              background: rgb(0, 0, 0); /* Fallback color */
+              background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+              color: #f1f1f1; /* Grey text */
+              width: 200px; /* Full width */
+               /* Some padding */
+            }
+            
+            
+            .first {
+             -webkit-animation: bannermove 10s linear infinite;
+                -moz-animation: bannermove 10s linear infinite;
+                  -o-animation: bannermove 10s linear infinite;
+                     animation: bannermove 10s linear infinite;
+            }
+             
+            @keyframes "bannermove" {
+             0% {
+                margin-left: 0px;
+             }
+             100% {
+                margin-left: -1200px;
+             }
+             
+            }
+             
+            @-moz-keyframes bannermove {
+             0% {
+               margin-left: 0px;
+             }
+             100% {
+               margin-left: -1200px;
+             }
+             
+            }
+             
+            @-webkit-keyframes "bannermove" {
+             0% {
+               margin-left: 0px;
+             }
+             100% {
+               margin-left: -1200px;
+             }
+             
+            }
+             
+            
+             
+            @-o-keyframes "bannermove" {
+             0% {
+               margin-left: 0px;
+             }
+             100% {
+               margin-left: -1200px;
+             }
+             
+            }
+            
+            
+            
+             
+            .photobanner img {
+             -webkit-transition: all 0.5s ease;
+             -moz-transition: all 0.5s ease;
+             -o-transition: all 0.5s ease;
+             -ms-transition: all 0.5s ease;
+             transition: all 0.5s ease;
+            }
+             
+            .photobanner img:hover {
+             -webkit-transform: scale(1.2);
+             -moz-transform: scale(1.2);
+             -o-transform: scale(1.2);
+             -ms-transform: scale(1.2);
+             transform: scale(1.2);
+             cursor: pointer;
+             
+             -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+             -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+             box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+            }
+            

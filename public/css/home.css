@@ -193,12 +193,13 @@ input[type=text] {
 }
 
 select{
-  width: 10%;
+  width: 15%;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   padding: 1px 2px 1px 1px;
+  
 
 }
 /*############################## 		DIV-3						CALENDAR      FEATURED                        #######################*/
@@ -548,6 +549,12 @@ height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
+  }
+  .title-search>div:first-child{
+    width: 50%;
+  }
+  .title-search>div:nth-child(2){
+    width: 50%;
   }
 
 

@@ -6,6 +6,8 @@
 -- Generation Time: May 25, 2020 at 12:34 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
+create database sampled;
+use sampled;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;

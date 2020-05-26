@@ -24,3 +24,4 @@ pipeline {
       registryCredential = 'dockerhub'
     }
   }
+}

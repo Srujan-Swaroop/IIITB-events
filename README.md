@@ -23,8 +23,11 @@ var connection=mysql.createConnection({
 source events.sql
 
 ````
-8. Now run the node server by running:
-
+8. Now deploy the node server by runnig the node server,Execute following command for running the server:-
+````
+node server.js
+````
+9. The website 
 
 1. You can deploy the website directly using the following command
 ````

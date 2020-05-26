@@ -4,7 +4,7 @@ pipeline {
     stage('Docker Image Build') {
       steps {
         script {
-          'sh docker build -t srujanswaroop/events:calimg .'
+          sh 'docker build -t srujanswaroop/events:calimg .'
         }
 
       }

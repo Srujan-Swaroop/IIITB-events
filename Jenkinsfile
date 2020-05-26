@@ -18,10 +18,10 @@ pipeline {
       }
 
     }
-    }
-    environment {
+    } 
+  }
+  environment {
       registry = 'srujanswaroop/events'
       registryCredential = 'dockerhub'
     }
-  }
 }

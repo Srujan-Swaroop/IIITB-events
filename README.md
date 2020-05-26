@@ -18,6 +18,13 @@ var connection=mysql.createConnection({
     database:'sampled'
 });
 ````
+7. Configure database in your local repository,by executing folowwing commands.
+````
+source events.sql
+
+````
+8. Now run the node server by running:
+
 
 1. You can deploy the website directly using the following command
 ````

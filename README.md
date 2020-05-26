@@ -26,8 +26,16 @@ source events.sql
 8. Now deploy the node server by runnig the node server,Execute following command for running the server:-
 ````
 node server.js
+
 ````
-9. The website 
+9. The website is deployed in local machine at port:4001.
+
+10. Access the website by entering the following url in your browser:
+
+````
+http://localhost:4001/
+
+````
 
 1. You can deploy the website directly using the following command
 ````

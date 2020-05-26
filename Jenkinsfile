@@ -4,24 +4,28 @@ pipeline {
     stage('Docker Image Build') {
       steps {
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          'sh docker build -t srujanswaroop/events:calimg .'
         }
-    }
+
+      }
     }
 
     stage('Docker push') {
       steps {
         script {
-          docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
-          }
-      }
+          withDockerRegistry([ credentialsId: "DockerHub", url: "" ])
+          {
+            sh 'docker push srujanswaroop/events:calimg'
 
+          }
+        }
+
+      }
     }
-    } 
+
   }
   environment {
-      registry = 'srujanswaroop/events'
-      registryCredential = 'dockerhub'
-    }
+    registry = 'srujanswaroop/events'
+    registryCredential = 'dockerhub'
+  }
 }

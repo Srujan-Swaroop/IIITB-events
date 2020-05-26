@@ -25,7 +25,3 @@ node server.js
 ````
 1. You can also use _**Nodemon**_ to deploy the website, which is much better when comaperd to _**Node**_. To download it use this command
 ````
-npm install -g nodemon
-````
-1. If you get any error while installing nodemon, try again using _**sudo**_.
-1. The website will be accessible on port *4000*.

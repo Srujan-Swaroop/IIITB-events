@@ -7,6 +7,7 @@ pipeline {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
     }
+    }
 
     stage('Docker push') {
       steps {
@@ -16,6 +17,7 @@ pipeline {
           }
       }
 
+    }
     }
     environment {
       registry = 'srujanswaroop/events'

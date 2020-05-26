@@ -1,0 +1,29 @@
+# ./docker-compose.yml
+
+version: '2'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_USER: "root"
+      MYSQL_ROOT_PASSWORD: "rootpassword"
+    ports:
+      - "3306:3306"
+  events:
+    build: .
+    container_name: events
+    depends_on:
+      - db
+    ports:
+      - "4000:4000"
+    stdin_open: true
+    tty: true
+    command: tail -F anything
+    # environment:
+    #   DATABASE__CLIENT: mysql
+    #   DATABASE__CONNECTION__HOST: mysql
+    #   DATABASE__CONNECTION__USER: root
+    #   DATABASE__CONNECTION__PASSWORD:
+    # depends_on:
+    #   - mysql:5.7

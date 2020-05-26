@@ -1,12 +1,24 @@
 # Commands to run the website
 
 1. Clone the repository into your local system.
-1. Install node js on your system.
-1. cd into the _**IIITB-events**_ directory
-1. Run  the following command to install all the necessary dependencies for server.js
+2. Install node js on your system.
+3. cd into the _**IIITB-events**_ directory,
+4. Run  the following command to install all the necessary dependencies for the server[server.js] to start.
 ````
 npm install
 ````
+5. Setup mysql database for the server in server.js.
+6. Update your mysql password in the following section of code at server.js
+````
+var connection=mysql.createConnection({
+
+    host:'localhost',
+    user:'root',
+    password:'[---Here---]' ,
+    database:'sampled'
+});
+````
+
 1. You can deploy the website directly using the following command
 ````
 node server.js

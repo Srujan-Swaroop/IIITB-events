@@ -37,9 +37,3 @@ http://localhost:4001/
 
 ````
 
-1. You can deploy the website directly using the following command
-````
-node server.js
-````
-1. You can also use _**Nodemon**_ to deploy the website, which is much better when comaperd to _**Node**_. To download it use this command
-````

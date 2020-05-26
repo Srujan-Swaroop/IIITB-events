@@ -13,7 +13,7 @@ pipeline {
     stage('Docker push') {
       steps {
         script {
-          withDockerRegistry([ credentialsId: "DockerHub", url: "" ])
+          withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
           {
             sh 'docker push srujanswaroop/events:calimg'
 
@@ -23,9 +23,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    registry = 'srujanswaroop/events'
-    registryCredential = 'dockerhub'
   }
 }

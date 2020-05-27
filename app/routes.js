@@ -1,9 +1,29 @@
 
-module.exports = function (app,connection) {
+module.exports = function (app,connection,upload) {
 
     // api ---------------------------------------------------------------------
     // get all todos
-    app.get('/api/siddu', function (req, res) {
+
+    app.post('/savedata', upload.array('files[]',2), function(req,res,next){
+
+
+        console.log('Uploaded Successful ', req.files, req.body);
+        
+        console.log(req.body);
+            var sql = "INSERT INTO events (Topic, Abstract,Location,Date,Type,Speaker,Image,Doc,Stime,Etime) VALUES ?";
+            var img=req.files[0]['filename'];
+            var file=req.files[1]['filename'];
+            var values = [
+              [req.body.title,req.body.editor1,req.body.location,req.body.date,req.body.category,req.body.speaker,img,file,req.body.stime,req.body.etime]
+            ];
+            connection.query(sql, [values], function (err, result) {
+              if (err) throw err;
+              console.log("Number of records inserted: " + result.affectedRows);
+            });
+
+    });
+
+    app.get('/api/siddu',function (req, res) {
         console.log("sidduvivek");
         connection.query('Select * from events',function(error,rows,fields){
             if(!!error)
@@ -27,9 +47,9 @@ module.exports = function (app,connection) {
            });
            app.post('/api/event', function (req, res) {
             console.log(req.body);
-            var sql = "INSERT INTO events (Topic, Abstract,Location,Date,Type) VALUES ?";
+            var sql = "INSERT INTO events (Topic, Abstract,Location,Date,Type,Speaker,Stime,Etime) VALUES ?";
             var values = [
-              [req.body.title,req.body.editor1,req.body.location,req.body.date,req.body.category]
+              [req.body.title,req.body.editor1,req.body.location,req.body.date,req.body.category,req.body.speaker,req.body.stime,req.body.etime]
             ];
             connection.query(sql, [values], function (err, result) {
               if (err) throw err;

@@ -7,7 +7,20 @@ var port = process.env.PORT || 4001; 				// set the port
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var path = require('path');
+var http = require('http');
 var multer  = require('multer');
+
+var storage = multer.diskStorage({
+  destination: './uploads/',
+  filename: function (req, file, cb) {
+    cb(null, file.originalname.replace(path.extname(file.originalname), "") + '-' + Date.now() + path.extname(file.originalname))
+  }
+})
+
+var upload = multer({ storage: storage });
+
+
 
 
 
@@ -31,14 +44,7 @@ connection.connect(function(error){
     }
 });
 
-var storage = multer.diskStorage({
-    destination: './uploads/',
-    filename: function (req, file, cb) {
-      cb(null, file.originalname.replace(path.extname(file.originalname), "") + '-' + Date.now() + path.extname(file.originalname))
-    }
-  });
-
-  var upload = multer({ storage: storage });
+  
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public' + '/html'));
@@ -52,8 +58,7 @@ app.use(express.static(__dirname + '/public' + '/gallery'+'/sangam'));
 app.use(express.static(__dirname + '/public' + '/gallery'+'/yamini'));
 app.use(express.static(__dirname + '/public' + '/gallery'+'/convocation')); 
 app.use(express.static(__dirname + '/public' + '/gallery'+'/foundationday')); 
-app.use(express.static(__dirname + '/public' + '/ng-file')); 
-
+app.use(express.static(__dirname + '/uploads')); 
 
 	// set the static files location /public/img will be /img for users
 
@@ -67,7 +72,7 @@ app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-M
 
 
 // routes ======================================================================
-require('./app/routes.js')(app,connection);
+require('./app/routes.js')(app,connection,upload);
 
 // listen (start app with node server.js) ======================================
 app.listen(port);

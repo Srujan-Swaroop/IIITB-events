@@ -2,8 +2,9 @@
   <head>
 	<meta charset="utf-8">
  
-  <script src="https://kit.fontawesome.com/8c32dd2a48.js" crossorigin="anonymous">
-  </script>
+  <script src="https://kit.fontawesome.com/8c32dd2a48.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script><!-- load angular -->
+
 
   
         
@@ -149,7 +150,7 @@ span.price {
   </head>
  
 	
-  <div class="row">
+  <div class="row" ng-app="IIITB_events" ng-controller="mainController" >
     <div class="col-75">
       <div class="container">
         <form name ="form" ng-submit= "submitevent()" >
@@ -164,7 +165,7 @@ span.price {
               <label for="location"><i class="fas fa-map-marked-alt"></i> Venue </label>
               <input type="text" id="location" ng-model="event.location" placeholder="Enter the event's venue location">
               <label for="image"><i class="fa fa-picture-o"></i> Image for the Event</label>
-              <input type="file" ng-model="event.img" id="img" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" ng-required="true">
+              <input type="file" file-model="myImg" id="img" accept="image/*"  ng-required="true">
               <label for="type"><i class="fas fa-chalkboard-teacher"></i> Category </label>
     <select id="category" ng-model="event.category">
       <option value="spandan">Spandan</option>
@@ -172,7 +173,6 @@ span.price {
       <option value="thesis">Thesis</option>
       <option value="samvaad">Samvaad</option>
       <option value="placement">Placement</option>
-  
     </select>
   
               <label for="date"><i class="fa fa-calendar"></i> Date of the event </label>
@@ -182,7 +182,8 @@ span.price {
               <label for="endtime"><i class="fas fa-clock"></i> End time </label>
               <input type="time" id="etime" ng-model="event.etime">
               <label for="doc"><i class="fa fa-upload" aria-hidden="true"></i>Upload document for the Event</label>
-              <input type="file" ng-upload="uploaded_file = $file">
+              <input type = "file" file-model = "myFile"/>
+
 
               
             

@@ -1,17 +1,18 @@
 app.config(function($routeProvider) {
     $routeProvider
+    .when("/",{
+      templateUrl:"main.html"
+        })
     .when("/login", {
       templateUrl : "login.html"
       // controller :  "loginController"
     })
     .when("/event", {
       templateUrl : "event1.html"
-      // controller :  "loginController"
     })
     .when("/add_event", {
       templateUrl : "add_event.html"
-      // controller :  "loginController"
-    })
+        })
     .when("/spandan", {
       templateUrl : "spandan.html"
     })

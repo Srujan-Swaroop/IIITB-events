@@ -1,4 +1,42 @@
-app.controller('mainController',function($scope,$http,Todos){
+app.directive('fileModel', ['$parse', function ($parse) {
+	return {
+	   restrict: 'A',
+	   link: function(scope, element, attrs) {
+		  var model = $parse(attrs.fileModel);
+		  var modelSetter = model.assign;
+
+		  element.bind('change', function(){
+			 scope.$apply(function(){
+				modelSetter(scope, element[0].files[0]);
+			 });
+		  });
+	   }
+	};
+ }]);
+
+ app.service('fileUpload', ['$http', function ($http) {
+	this.uploadFileToUrl = function(text,img,file,uploadUrl){
+	   var fd = new FormData();
+	   console.log(text);
+	   for ( var key in text ) {
+		fd.append(key, text[key]);
+	}
+	   fd.append("files[]", img);
+	   fd.append("files[]",file);
+	   console.log("filest");
+	   console.log(fd.getAll('files[]'));
+	   $http.post(uploadUrl, fd, { 
+		  transformRequest: angular.identity,
+		  headers: {'Content-Type': undefined}
+	   })
+	   .success(function(){
+	   })
+	   .error(function(){
+	   });
+	}
+ }]);
+
+app.controller('mainController',function($scope,$http,Todos,fileUpload){
 	$scope.form = [];
 	$scope.files = [];
 	$scope.check=$scope.event_search;
@@ -26,13 +64,21 @@ app.controller('mainController',function($scope,$http,Todos){
 		title:"",
 		speaker:"",
 		location:"",
-		img:"",
 		category:"",
 		date:"",
 		stime:"",
 		etime:"",
-		editor_text:"",
+		editor1:"",
 	};
+	$scope.uploadFile = function(text){
+		var file = $scope.myFile;
+		var img=$scope.myImg;
+		console.log("siddu no file");
+		console.log(img);
+		var uploadUrl = "/savedata";
+		fileUpload.uploadFileToUrl(text,img,file,uploadUrl);
+
+	 };
 
 	$scope.IsVisible = true;
 	$scope.IsVisible_main = true;
@@ -79,22 +125,18 @@ app.controller('mainController',function($scope,$http,Todos){
 		
 		console.log("evecdcnt");	
 		console.log($scope.event.editor1);
-		alert('Event added successfully.');
-		console.log($scope.uploaded_file);
-
-
-
-		Todos.create($scope.event)
-
-		// if successful creation, call our get function to get all the new todos
-		.success(function(data) {
-			$scope.loading = false;
-		});
+		console.log($scope.file);
+		$scope.uploadFile($scope.event);
+		alert('Event added successfully.')
+		// Todos.create($scope.event)
+		// // if successful creation, call our get function to get all the new todos
+		// .success(function(data) {
+		// 	$scope.loading = false;
+		// });
 		$scope.event={
 			title:"",
 			speaker:"",
 			location:"",
-			img:"",
 			category:"",
 			date:"",
 			stime:"",
@@ -125,6 +167,7 @@ app.controller('mainController',function($scope,$http,Todos){
 		$scope.IsVisible_main = "false";
 		$scope.clicked_event=$scope.todos[index-1];
 		$scope.event_abstract=$scope.clicked_event['Abstract'];
+		$scope.imgsrc=$scope.clicked_event['Image'];
 		$scope.hideMain();
 		console.log($scope.event_abstract);
 	};

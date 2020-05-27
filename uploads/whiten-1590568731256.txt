@@ -1,0 +1,14 @@
+img=cv2.imread('mil.jpeg',0)
+plt.imshow(img,cmap='gray',interpolation='bicubic')
+plt.xticks([]),plt.yticks([])
+plt.show()
+mean=np.mean(img)
+sd=np.sqrt(np.var(img))
+whiten=np.zeros(img.shape,float)
+for i in range(img.shape[0]):
+    for j in range(img.shape[1]):
+        whiten[i,j]=(img[i,j]-mean)/sd
+plt.imshow(whiten,cmap='gray',interpolation='bicubic')
+plt.xticks([]),plt.yticks([])
+plt.show()
+cv2.imwrite('gotw.png',whiten)

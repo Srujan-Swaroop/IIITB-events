@@ -2,12 +2,17 @@
 
     // set up ========================
     var express  = require('express');
-    var app      = express();                               // create our app w/ express
-    var mongoose = require('mongoose');                     // mongoose for mongodb
+    var app = express();                               // create our app w/ express
+    // var mongoose = require('mongoose');                     // mongoose for mongodb
     // var morgan = require('morgan');             // log requests to the console (express4)
     var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
+    // const adminRouter = require('./routers/admin.router')
+    const webdriver = require('selenium-webdriver');
+    const chrome = require('selenium-webdriver/chrome');
+    const chromedriver = require('chromedriver');
 
+    chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
     // configuration =================
 
     // mongoose.connect('mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu');     // connect to mongoDB database on modulus.io
@@ -22,6 +27,7 @@
     app.use(bodyParser.json());                                     // parse application/json
     app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
     app.use(methodOverride());
+    // app.use('/admin', adminRouter)
 
     // define model =================
         // var Todo = mongoose.model('Todo', {

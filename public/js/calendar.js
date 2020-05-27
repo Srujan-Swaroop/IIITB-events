@@ -49,6 +49,76 @@ function loadCalendarYears() {
     }
 }
 
+function loadCalendarDays() {
+    document.getElementById("calendarDays").innerHTML = "";
+
+    var tmpDate = new Date(year, month, 0);
+    var num = daysInMonth(month, year);
+    var dayofweek = tmpDate.getDay();       // find where to start calendar day of week
+
+    console.log(num);
+    console.log(dayofweek);
+    console.log(year);
+    console.log(month);
+
+
+    for (var i = 0; i <= dayofweek; i++) {
+        var d = document.createElement("div");
+        d.classList.add("day");
+        d.classList.add("blank");
+        document.getElementById("calendarDays").appendChild(d);
+    }
+
+    for (var i = 0; i < num; i++) {
+        var tmp = i + 1;
+        var d = document.createElement("div");
+        d.id = "calendarday_" + tmp;
+        d.className = "day";
+        d.innerHTML = tmp;
+        d.dataset.day = tmp;
+
+        d.addEventListener('click', function(){
+            this.classList.toggle('selected');
+            console.log("Moving..");
+            if (!selectedDays.includes(this.dataset.day))
+                selectedDays.push(this.dataset.day);
+
+            else
+                selectedDays.splice(selectedDays.indexOf(this.dataset.day), 1);
+            var ab = this.dataset.day;
+            var bc = this.dataset.month;
+            var ca = this.dataset.year;
+        });
+
+        // d.addEventListener('mousemove', function(e){
+        //    e.preventDefault();
+        //     if (mousedown)
+        //     {
+        //         this.classList.add('selected');
+        //         console.log("Moving..");
+        //         if (!selectedDays.includes(this.dataset.day))
+        //             selectedDays.push(this.dataset.day);
+        //     }
+        // });
+
+        // d.addEventListener('mousedown', function(e){
+        //     e.preventDefault();
+        //     mousedown = true;
+        // });
+        
+        // d.addEventListener('mouseup', function(e){
+        //     e.preventDefault();
+        //     mousedown = false;
+        // });
+
+        document.getElementById("calendarDays").appendChild(d);
+    }
+
+    var clear = document.createElement("div");
+    clear.className = "clear";
+    document.getElementById("calendarDays").appendChild(clear);
+}
+
 // function loadCalendarDays() {
 //     document.getElementById("calendarDays").innerHTML = "";
 
@@ -69,8 +139,9 @@ function loadCalendarYears() {
 //         d.id = "calendarday_" + tmp;
 //         d.className = "day";
 //         d.innerHTML = tmp;
-//         d.dataset.day = tmp;
+//         d.dataset.day = tmp;              // easier to retrieve the date
 
+//         /* ****************** Click Event ********************** */
 //         d.addEventListener('click', function(){
 //             this.classList.toggle('selected');
 
@@ -80,27 +151,7 @@ function loadCalendarYears() {
 //             else
 //                 selectedDays.splice(selectedDays.indexOf(this.dataset.day), 1);
 //         });
-
-//         // d.addEventListener('mousemove', function(e){
-//         //    e.preventDefault();
-//         //     if (mousedown)
-//         //     {
-//         //         this.classList.add('selected');
-
-//         //         if (!selectedDays.includes(this.dataset.day))
-//         //             selectedDays.push(this.dataset.day);
-//         //     }
-//         // });
-
-//         // d.addEventListener('mousedown', function(e){
-//         //     e.preventDefault();
-//         //     mousedown = true;
-//         // });
-        
-//         // d.addEventListener('mouseup', function(e){
-//         //     e.preventDefault();
-//         //     mousedown = false;
-//         // });
+//         /* **************************************************** */
 
 //         document.getElementById("calendarDays").appendChild(d);
 //     }
@@ -109,48 +160,6 @@ function loadCalendarYears() {
 //     clear.className = "clear";
 //     document.getElementById("calendarDays").appendChild(clear);
 // }
-
-function loadCalendarDays() {
-    document.getElementById("calendarDays").innerHTML = "";
-
-    var tmpDate = new Date(year, month, 0);
-    var num = daysInMonth(month, year);
-    var dayofweek = tmpDate.getDay();       // find where to start calendar day of week
-
-    for (var i = 0; i <= dayofweek; i++) {
-        var d = document.createElement("div");
-        d.classList.add("day");
-        d.classList.add("blank");
-        document.getElementById("calendarDays").appendChild(d);
-    }
-
-    for (var i = 0; i < num; i++) {
-        var tmp = i + 1;
-        var d = document.createElement("div");
-        d.id = "calendarday_" + tmp;
-        d.className = "day";
-        d.innerHTML = tmp;
-        d.dataset.day = tmp;              // easier to retrieve the date
-
-        /* ****************** Click Event ********************** */
-        d.addEventListener('click', function(){
-            this.classList.toggle('selected');
-
-            if (!selectedDays.includes(this.dataset.day))
-                selectedDays.push(this.dataset.day);
-
-            else
-                selectedDays.splice(selectedDays.indexOf(this.dataset.day), 1);
-        });
-        /* **************************************************** */
-
-        document.getElementById("calendarDays").appendChild(d);
-    }
-
-    var clear = document.createElement("div");
-    clear.className = "clear";
-    document.getElementById("calendarDays").appendChild(clear);
-}
 
 function daysInMonth(month, year)
 {
@@ -167,5 +176,6 @@ window.addEventListener('load', function () {
     loadCalendarMonths();
     loadCalendarYears();
     loadCalendarDays();
+    console.log("Moving..");
 });
             

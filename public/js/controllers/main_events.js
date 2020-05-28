@@ -165,7 +165,14 @@ app.controller('mainController',function($scope,$http,Todos,fileUpload){
 	$scope.extractevent=function(index){
 		console.log("vivek");
 		$scope.IsVisible_main = "false";
-		$scope.clicked_event=$scope.todos[index-1];
+		$scope.index_event=index;
+		for(var i=0;i<$scope.display.length;i++)
+			{
+				if($scope.display[i]['ID']==index)
+				{
+					$scope.clicked_event=$scope.display[i];
+				}
+			} 
 		$scope.event_abstract=$scope.clicked_event['Abstract'];
 		$scope.imgsrc=$scope.clicked_event['Image'];
 		$scope.hideMain();

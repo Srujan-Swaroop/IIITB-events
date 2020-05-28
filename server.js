@@ -8,7 +8,6 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var path = require('path');
-var http = require('http');
 var multer  = require('multer');
 
 var storage = multer.diskStorage({

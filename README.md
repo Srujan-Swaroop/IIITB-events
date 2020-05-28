@@ -2,13 +2,11 @@
 
 1. Clone the repository into your local system.
 2. Install node js on your system.
-<<<<<<< HEAD
 3. cd into the _**IIITB-events**_ directory.
 (i).create 'sampled' database and database tables by running the following commands.
 =======
 3. cd into the _**IIITB-events**_ directory,
 4. Run  the following command to install all the necessary dependencies for the server[server.js] to start.
->>>>>>> 3043ae48c17fcc9636737904a2f57f5174353972
 ````
 mysql -u root -p
 source sampled.sql
@@ -56,4 +54,3 @@ http://localhost:4001/
 
 ````
 
->>>>>>> 3043ae48c17fcc9636737904a2f57f5174353972

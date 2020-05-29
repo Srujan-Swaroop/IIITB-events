@@ -1,7 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage('Build db&app') {
+    stage('Build ') {
+      steps {
+        script {
+          npm install
+        }
+
+      }
+    }
+
+    stage('Docker build') {
       steps {
         script {
           sh 'docker-compose build'
@@ -12,15 +21,12 @@ pipeline {
 
     stage('Docker push') {
       steps {
-        script {
-          withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
+        sh '''withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
           {
-            sh 'docker push srujanswaroop/eventsdb:latest'
-            sh 'docker push srujanswaroop/eventsweb:latest'
+            sh \'docker push srujanswaroop/eventsdb:latest\'
+            sh \'docker push srujanswaroop/eventsweb:latest\'
 
-          }
-        }
-
+          }'''
       }
     }
 

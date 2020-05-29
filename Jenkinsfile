@@ -1,12 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('Docker Image Build') {
+    stage('Build ') {
       steps {
-        script {
-          sh 'docker build -t srujanswaroop/events:calimg .'
-        }
+        sh 'npm install'
+      }
+    }
 
+    stage('Docker images build') {
+      steps {
+        sh 'docker-compose build'
       }
     }
 
@@ -15,11 +18,25 @@ pipeline {
         script {
           withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
           {
-            sh 'docker push srujanswaroop/events:calimg'
+            sh 'docker push srujanswaroop/eventsdb:latest'
+            sh 'docker push srujanswaroop/eventsweb:latest'
 
           }
         }
 
+      }
+    }
+
+    stage('Rundeck') {
+      steps {
+        sh '''step([$class: "RundeckNotifier",
+          rundeckInstance: "Rundeck",
+          shouldFailTheBuild: true,
+          shouldWaitForRundeckJob: true,
+          options: """
+            BUILD_VERSION=$BUILD_NUMBER
+          """,
+          jobId: "52559608-322c-4d4f-afed-f39ea981a781"])'''
       }
     }
 

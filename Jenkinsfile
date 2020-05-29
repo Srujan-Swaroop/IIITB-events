@@ -16,11 +16,11 @@ pipeline {
     stage('Docker push') {
       steps {
         sh '''withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
-{
-sh \'docker push srujanswaroop/eventsdb:latest\'
-sh \'docker push srujanswaroop/eventsweb:latest\'
-}
-'''
+ 	        	{
+ 	        		sh \'docker push srujanswaroop/eventsdb:latest\'
+                                sh \'docker push srujanswaroop/eventsweb:latest\'
+
+ 	      		}'''
       }
     }
 

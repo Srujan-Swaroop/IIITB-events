@@ -14,15 +14,17 @@ pipeline {
     }
 
     stage('Docker push') {
-      steps
- 		    {
- 	        	withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
- 	        	{
- 	        		sh 'docker push srujanswaroop/eventsdb:latest'
-              sh 'docker push srujanswaroop/eventsweb:latest'
+      steps {
+        script {
+          withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
+          {
+            sh 'docker push srujanswaroop/eventsdb:latest'
+            sh 'docker push srujanswaroop/eventsweb:latest'
 
- 	      		}
- 		    }
+          }
+        }
+
+      }
     }
 
     stage('Rundeck') {

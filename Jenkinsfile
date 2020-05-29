@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Docker Image Build') {
+    stage('Build db&app') {
       steps {
         script {
-          sh 'docker build -t srujanswaroop/events:calimg .'
+          sh 'docker-compose build'
         }
 
       }
@@ -15,7 +15,8 @@ pipeline {
         script {
           withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
           {
-            sh 'docker push srujanswaroop/events:calimg'
+            sh 'docker push srujanswaroop/eventsdb:latest'
+            sh 'docker push srujanswaroop/eventsweb:latest'
 
           }
         }

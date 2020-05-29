@@ -19,16 +19,6 @@ pipeline {
           withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
           {
             sh 'docker push srujanswaroop/eventsdb:latest'
-
-          }
-        }
-
-        script {
-          withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
-          {
-            sh 'docker push srujanswaroop/eventsdb:latest'
-            sh 'docker push srujanswaroop/eventsweb:latest'
-
           }
         }
 

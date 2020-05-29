@@ -7,17 +7,21 @@ EXPOSE 4000
 # Setting current working dir
 WORKDIR /usr/app
 
+RUN apk --update --no-cache add tzdata bash curl \
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone \
+    && apk del tzdata
+
+RUN apk update && apk add --no-cache coreutils
+
 # Copying relevant files inside container
 COPY . /usr/app/
 
+ADD run.sh /usr/app/run.sh
+RUN chmod 0755 /usr/app/run.sh
 # Installing the requirements inside the container
-#RUN apt-get update
-#RUN apt-get install nodejs curl npm -y
-
-#RUN mv ./node_modules ./node_modules.tmp \
-#  && mv ./node_modules.tmp ./node_modules \
-#  && npm install
 RUN npm install
 
-ENTRYPOINT ["npm","start"]
+
+CMD ["./run.sh", "-t", "30", "db:3306", "--", "node", "server.js"]
 #CMD ["/bin/sh","run.sh"]

@@ -5,12 +5,12 @@ version: '2'
 services:
   db:
     build: ./database
-    image: eventsdb
+    image: srujanswaroop/eventsdb
     ports:
       - "3306:3306"
   events:
     build: .
-    image: eventsweb
+    image: srujanswaroop/eventsweb
     container_name: events
     depends_on:
       - db

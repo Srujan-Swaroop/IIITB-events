@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="8" failures="0" time="18.432">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-05-31T08:24:39" time="6.694" tests="1">
+    <testcase classname=" GeneralEvents" name=" GeneralEvents" time="4.555">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-05-31T08:24:39" time="6.735" tests="1">
+    <testcase classname=" Gallery" name=" Gallery" time="4.547">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-05-31T08:24:39" time="9.569" tests="1">
+    <testcase classname=" MainEvents" name=" MainEvents" time="7.451">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-05-31T08:24:46" time="6.75" tests="1">
+    <testcase classname=" SearchBox" name=" SearchBox" time="3.117">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-05-31T08:24:49" time="5.115" tests="1">
+    <testcase classname=" AddEvent" name=" AddEvent" time="4.304">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-05-31T08:24:53" time="3.768" tests="1">
+    <testcase classname=" FeatureEvents" name=" FeatureEvents" time="3.254">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-05-31T08:24:54" time="3.078" tests="1">
+    <testcase classname=" Calendar" name=" Calendar" time="2.66">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-05-31T08:24:46" time="11.271" tests="1">
+    <testcase classname=" Footer" name=" Footer" time="7.611">
+    </testcase>
+  </testsuite>
+</testsuites>

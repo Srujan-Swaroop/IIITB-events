@@ -36,7 +36,7 @@ app.directive('fileModel', ['$parse', function ($parse) {
 	}
  }]);
 
-app.controller('mainController',function($scope,$http,Todos,fileUpload){
+app.controller('mainController',function($scope,$http,$location,$route,Todos,fileUpload){
 	$scope.form = [];
 	$scope.files = [];
 	$scope.check=$scope.event_search;
@@ -61,15 +61,15 @@ app.controller('mainController',function($scope,$http,Todos,fileUpload){
 
 	$scope.loading = true;
 	$scope.event={
-		title:"",
-		speaker:"",
-		location:"",
-		category:"",
-		date:"",
-		stime:"",
-		etime:"",
-		editor1:"",
-	};
+		Topic:'',
+		Speaker:'',
+		Location:'',
+		Type:'',
+		Date:'',
+		Stime:'',
+		Etime:'',
+		Abstract:'',
+	};	
 	$scope.uploadFile = function(text){
 		var file = $scope.myFile;
 		var img=$scope.myImg;
@@ -114,7 +114,6 @@ app.controller('mainController',function($scope,$http,Todos,fileUpload){
 		$scope.IsVisible = false;
 		$scope.hideMain();
 
-
 	};
 	$scope.showLogin=function(){
 		console.log("gsvdhbvbhghvgsiddu");
@@ -123,32 +122,26 @@ app.controller('mainController',function($scope,$http,Todos,fileUpload){
 	};
 	$scope.submitevent=function(){	
 		
-		console.log("evecdcnt");	
-		console.log($scope.event.editor1);
-		console.log($scope.file);
+		console.log($scope.event);	
 		$scope.uploadFile($scope.event);
 		alert('Event added successfully.')
-		// Todos.create($scope.event)
-		// // if successful creation, call our get function to get all the new todos
-		// .success(function(data) {
-		// 	$scope.loading = false;
-		// });
 		$scope.event={
-			title:"",
-			speaker:"",
-			location:"",
-			category:"",
-			date:"",
-			stime:"",
-			etime:"",
-			editor1:"",
+			Topic:"",
+			Speaker:"",
+			Location:"",
+			Type:"",
+			Date:"",
+			Stime:"",
+			Etime:"",
+			Abstract:"",
 		};				// clear the form so our user is ready to enter another
 		console.log($scope.event.editor1);
+		$location.path("/home");
 
 	};
 	Todos.get()
 		.success(function(data) {
-
+			// $route.reload();
 			$scope.todos = data['rows'];
 			$scope.clicked_event=$scope.todos[0];   
 			console.log("siddu");
@@ -165,7 +158,6 @@ app.controller('mainController',function($scope,$http,Todos,fileUpload){
 	$scope.extractevent=function(index){
 		console.log("vivek");
 		$scope.IsVisible_main = "false";
-		$scope.index_event=index;
 		for(var i=0;i<$scope.display.length;i++)
 			{
 				if($scope.display[i]['ID']==index)
@@ -173,11 +165,78 @@ app.controller('mainController',function($scope,$http,Todos,fileUpload){
 					$scope.clicked_event=$scope.display[i];
 				}
 			} 
+		console.log(index)
 		$scope.event_abstract=$scope.clicked_event['Abstract'];
 		$scope.imgsrc=$scope.clicked_event['Image'];
 		$scope.hideMain();
 		console.log($scope.event_abstract);
 	};
+	$scope.deleteevent=function(index){
+		console.log("siddudelete");
+		console.log(index);
+		Todos.delete(index)
+		.success(function(data) {
+			alert('Event successfully deleted')
+
+		});
+	};
+	$scope.loadinfo=function(index){
+
+		for(var i=0;i<$scope.display.length;i++)
+			{
+				if($scope.display[i]['ID']==index)
+				{
+					$scope.event_edit=$scope.display[i];
+					$scope.copy_event=angular.copy($scope.event_edit);
+					$scope.event_edit['Date']=new Date($scope.event_edit['Date']);
+					$scope.event_edit['Stime']=new Date($scope.event_edit['Stime']);
+					$scope.event_edit['Etime']=new Date($scope.event_edit['Etime']);
+					console.log("time")
+					console.log($scope.event_edit['Stime']);
+
+
+				}
+			} 
+
+	};
+	$scope.editevent=function(index){
+		console.log("sidduedit");
+		console.log(index);
+		$scope.loadinfo(index);
+		$scope.IsVisible_main = false;
+		console.log($scope.event_edit['Topic']);	
+
+	};
+	$scope.updateevent=function(index){
+		console.log("sidduupdate");
+
+		console.log(index);
+		var img ='';		;
+		var file='';
+		if($scope.event_edit['Image']!=$scope.copy_event['Image'] )
+		{
+			img=$scope.event_edit['Image'];
+			$scope.event_edit['Image']='';
+			console.log(img);
+		}
+	
+		if($scope.event_edit['Doc']!=$scope.copy_event['Doc'])
+		{
+			file=$scope.event_edit['Doc'];
+			$scope.event_edit['Doc']='';
+		}
+	
+		fileUpload.uploadFileToUrl($scope.event_edit,img,file,'/update');
+		alert('Event updated successfully.')
+
+
+		console.log($scope.event_edit);
+		$location.path("/home");
+
+
+	};
+
+
 
 	
 	

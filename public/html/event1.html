@@ -17,15 +17,15 @@
               <div id="date-time">
 
                 <div class="date">
-                  <h3><i class="fal fa-calendar-alt"></i><span>{{ clicked_event['Date'] }}</span></h3>
+                  <h3><i class="fal fa-calendar-alt"></i><span> {{ clicked_event['Date']}}</span></h3>
                 </div>
                 
                 <div class="place">
-                  <h3 ><i class="fas fa-map-marker-alt"></i><span>{{ clicked_event['Location'] }}</span></h3>
+                  <h3 ><i class="fas fa-map-marker-alt"></i><span> {{ clicked_event['Location'] }}</span></h3>
                 </div>
 
                 <div class="place">
-                  <h3>Speaker :<span>{{ clicked_event['Speaker'] }}</span></h3>
+                  <h3>Speaker :<span> {{ clicked_event['Speaker'] }}</span></h3>
                 </div>
 
               </div>   
@@ -40,7 +40,12 @@
                 <h3>About the Event</h3>
                 <p ng-bind-html="event_abstract"></p>
 
+                <a href="{{ clicked_event['Doc'] }}" download>
+                  <label for="doc"><i class="fa fa-download" aria-hidden="true"></i>Download document for the Event</label>
+
+                </a>  
               </div>
+              
             </div>
             
           </div>

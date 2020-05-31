@@ -1,7 +1,7 @@
-app.config(function($routeProvider) {
+app.config(function($routeProvider,$locationProvider) {
     $routeProvider
-    .when("/",{
-      templateUrl:"main.html"
+    .when("/home",{
+    templateUrl:"main.html",
         })
     .when("/login", {
       templateUrl : "login.html"
@@ -12,6 +12,9 @@ app.config(function($routeProvider) {
     })
     .when("/add_event", {
       templateUrl : "add_event.html"
+        })
+    .when("/edit_event", {
+      templateUrl : "edit_event.html"
         })
     .when("/spandan", {
       templateUrl : "spandan.html"
@@ -36,6 +39,10 @@ app.config(function($routeProvider) {
     })
     .when("/gallery", {
       templateUrl : "gallery.html"
-    });
+    })
+    .otherwise({redirectTo:'/home'});
+
+    // $locationProvider.html5Mode(true);
+
 
   });

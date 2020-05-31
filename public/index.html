@@ -94,8 +94,8 @@
 
 				<div class="logo-login">
 					<div class ="logo">
-						<a href="/" ng-click= "showLogin()">
-							<img src="https://www.iiitb.ac.in/includefiles/settings/iiitb_logo100x95.png" alt="IIITB" height="72px" width="66px">
+						<a href="#home" ng-click= "showLogin()">
+							<img src="https://www.iiitb.ac.in/includefiles/settings/iiitb_logo100x95.png"  href="#home" alt="IIITB" height="72px" width="66px">
 					  </a>
 					  
 					  </div>
@@ -146,11 +146,11 @@
 				  </nav>
 
 
-      		</div>
+			  </div>
+			  
 	 <!-- loading view of other pages -->
 	 <div ng-view ></div>
-
-	 <div class="main_content" ng-show="IsVisible_main">  
+	 <div class="main_content" ng-show = "IsVisible_main" >  
 		<div class="container1">
 		  <!-- <h2>Live Events in IIITB</h2>  -->
 		  <div class="title-search-me" role="search">
@@ -158,7 +158,7 @@
 		  
 		  <div class="title-search">
 			  <div class="home-title">
-				  <a href="/" class = "title">Featured Events</a>
+				  <a href="/home" class = "title">Featured Events</a>
 				  
 			  </div>
 			  
@@ -173,7 +173,7 @@
 					  placeholder="Enter to search" />	
 					  <input type="text" ng-disabled="Isvisible_search_show" ng-hide="Isvisible_search_show" ng-model="search" 
 					  placeholder="Enter text to search events" />	
-
+	
 					  <!-- <button type="submit" name="search" class="search-submit" aria-label="Search"></button> -->
 			  </div>
 		  </div>
@@ -253,12 +253,12 @@
 			</a>
 		  </div>
 		</div>
-
+	
 	<div id="all-below">
 		
 		<div class="only-events">
 						  <div class="event-catalog">
-
+	
 	<div ng-repeat="x in display | filter : search ">
 				
 	
@@ -266,17 +266,20 @@
 					<div class="su-card su-card--horizontal">
 					
 					<div>
-					  <img class="event_img" src="iiitb.png" alt="" height="220px" width="220px">  
+					  <img class="event_img" ng-src="{{ x['Image'] }}"  alt="" height="220px" width="220px" >  
 					</div>
 	
 					  <div class="su-card__contents">
-						<h2 class="event-topic">{{ x['Topic'] }}</h3>
-						<p class="event-category">{{ x['Type'] }}</p>
-						<p class="event-date"><i class="fal fa-calendar-alt"></i><span>{{    x['Date']        }} </span></p>
-						<p class="event-location"><i class="fas fa-map-marker-alt"></i><span>{{   x['Location'] }}</span></p>
-						<div id="check"></div>
+						<h2 class="event-topic"> {{ x['Topic']  }}</h3>
+						<p class="event-category"> {{ x['Type'] | uppercase  }}</p>
+						<p class="event-date"><i class="fal fa-calendar-alt"> </i><span>{{    x['Date']  |  date : format : fullDate       }} </span></p>
+						<p class="event-location"><i class="fas fa-map-marker-alt"></i> <span>{{   x['Location'] | uppercase  }}</span></p>
+						<a ng-click="editevent(x['ID'])" href="#edit_event" class="btn1"> Edit Event </a>
+						<a ng-click="deleteevent(x['ID'])" href="/" class="btn1"> Delete Event </a>
+						
 						</div>
 					  </div>
+					  
 				</a>
 				
 			</div>
@@ -382,7 +385,8 @@
 	
 	</div>
 	</div>
-						
+			
+				
       	</div>
 
     </header>

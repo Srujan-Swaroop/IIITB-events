@@ -1,0 +1,230 @@
+<!-- <div class="main_content" >  
+    <div class="container1">
+      <div class="title-search-me" role="search">
+
+      
+      <div class="title-search">
+          <div class="home-title">
+              <a href="/home" class = "title">Featured Events</a>
+              
+          </div>
+          
+          <div class="search">
+                  Search By 
+                <select ng-model="columns" ng-click="search_function()" ng-options="e for e in headers">
+                    <option value="" ></option>
+                </select>
+                  
+                  Search <input type="text" ng-disabled="Isvisible_search_hide" ng-hide="Isvisible_search_hide"ng-model="search[columns]" 
+                  placeholder="Enter to search" />	
+                  <input type="text" ng-disabled="Isvisible_search_show" ng-hide="Isvisible_search_show" ng-model="search" 
+                  placeholder="Enter text to search events" />	
+
+          </div>
+      </div>
+      
+
+  </div> 
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="item active">
+            <a href="events/event1.html" class="events">
+                            <div class="su-card su-card--horizontal">
+
+                            <div>
+                                <img src="iiitb.png" alt="" height="320px" width="320px">
+                            </div>
+
+                              <div class="su-card__contents">
+
+                                  <h2>Dawn Harms and the Rhythm Sisters: Adventures in Music</h2>
+                                  <p class="event-category">Performance</p>
+                              <p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 9:30 am</span></p>
+                                  <p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Dinkelspiel Auditorium</span></p>
+                                </div>
+                              </div>
+                        </a>
+          </div>
+
+          <div class="item">
+                      <a href="/events/847/84726" class="events">
+                      <div class="su-card su-card--horizontal">
+                    <div>
+                        <img src="iiitb.png" alt="" height="320px" width="320px">
+                    </div>
+                          <div class="su-card__contents">
+                          <h3>David Pershall, baritone: Voice Masterclass</h3>
+                    <p class="event-category">Performance</p>
+                          <p class="event-date"><i class="fal fa-calendar-alt"></i><span> Monday, February 24, 2020. 4:30 pm</span></p>
+                          <p class="event-location"><i class="fas fa-map-marker-alt"></i><span>Campbell Recital Hall</span></p>
+                                  </div>
+                      </div>
+                      </a>
+          </div>
+        
+          <div class="item">
+                      <a href="/events/847/84726" class="events">
+                      <div class="su-card su-card--horizontal">
+                    <div>
+                          <img src="iiitb.png" alt="" height="320px" width="320px">
+                        </div>
+                          <div class="su-card__contents">
+                          <h3>David Pershall, baritone: Voice Masterclass</h3>
+                    <p class="event-category"> Performance</p>
+                          <p class="event-date"><i class="fal fa-calendar-alt"></i><span>   Monday, February 24, 2020. 4:30 pm</span></p>
+                          <p class="event-location"><i class="fas fa-map-marker-alt"></i><span>   Campbell Recital Hall</span></p>
+                                  </div>
+                      </div>
+                      </a>
+          </div>
+        </div>
+
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+<div id="all-below">
+    
+    <div class="only-events">
+                      <div class="event-catalog">
+
+<div ng-repeat="x in display | filter : search ">
+            
+
+            <a href="#event" ng-click="extractevent(x['ID'])" class="events">
+                <div class="su-card su-card--horizontal">
+                
+                <div>
+                  <img class="event_img" ng-src="{{ x['Image'] }}"  alt="" height="220px" width="220px" >  
+                </div>
+
+                  <div class="su-card__contents">
+                    <h2 class="event-topic"> {{ x['Topic']  }}</h3>
+                    <p class="event-category"> {{ x['Type'] | uppercase  }}</p>
+                    <p class="event-date"><i class="fal fa-calendar-alt"> </i><span>{{    x['Date']  |  date : format : fullDate       }} </span></p>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> <span>{{   x['Location'] | uppercase  }}</span></p>
+                    <a ng-click="editevent(x['ID'])" href="#edit_event" class="btn1"> Edit Event </a>
+                    <a ng-click="deleteevent(x['ID'])" href="/" class="btn1"> Delete Event </a>
+                    
+                    </div>
+                  </div>
+                  
+            </a>
+            
+        </div>
+
+
+                
+
+                      </div>
+    </div>
+
+    <div class="calendar-filters">
+        <div class="calendar" id="calendar">
+                  <div class="calendar-btn month-btn" onclick="$('#months').toggle('fast')">
+                          <span id="curMonth"></span>
+                          <div id="months" class="months dropdown"></div>
+                  </div>
+          
+                  <div class="calendar-btn year-btn" onclick="$('#years').toggle('fast')">
+                          <span id="curYear"></span>
+                          <div id="years" class="years dropdown"></div>
+                  </div>
+          
+                  <div class="clear"></div>
+          
+                  <div class="calendar-dates">
+                          <div class="days">
+                                  <div class="day label">SUN</div>
+                                  <div class="day label">MON</div>
+                                  <div class="day label">TUE</div>
+                                  <div class="day label">WED</div>
+                                  <div class="day label">THU</div>
+                                  <div class="day label">FRI</div>
+                                  <div class="day label">SAT</div>
+          
+                                  <div class="clear"></div>
+                          </div>
+          
+                          <div id="calendarDays" class="days">
+                          </div>
+                  </div>
+          </div>
+
+
+                        <div id="su-main-nav">
+                        
+                      <ul class="main-menu">	  
+
+                          <li id="nav-type" class="menu2">
+                              <a class="filter" href="#"><i class="fas fa-tags" aria-hidden="false"></i> By Type</a>
+                                <ul class="dropdown">
+                                  <li><a   ng-click = "search_type()">Class</a></li>
+                                  <li><a   href="/byCategory/3">Conference / Symposium</a></li>
+                                  <li><a   href="/byCategory/7">Exhibition</a></li>
+                                  <li><a   href="/byCategory/27">Information Session</a></li>
+                                  <li><a   href="/byCategory/2">Lecture / Reading / Talk</a></li>
+                                  <li><a   href="/byCategory/12">Meeting</a></li>
+                                  <li><a   href="/byCategory/4">Performance</a></li>
+                                  <li><a   href="/byCategory/17">Ph.D. Oral</a></li>
+                                  <li><a   href="/byCategory/10">Recreation / Sport</a></li>
+                                  <li><a   href="/byCategory/13">Religious</a></li>
+                                  <li><a   href="/byCategory/31">Screening</a></li>
+                                  <li><a   href="/byCategory/26">Seminar</a></li>
+                                  <li><a   href="/byCategory/14">Social</a></li>
+                                  <li><a   href="/byCategory/15">Tour</a></li>
+                                  <li><a   href="/byCategory/1">University Event</a></li>
+                                </ul>
+                          </li>
+
+                          <li id="nav-subject" class="menu2 ">
+                              <a class="filter" href="#dropdown"><i class="fas fa-globe-americas" aria-hidden="true"></i> By Subject</a>
+                              <ul class="dropdown">
+                                <li><a  style="border-bottom: none;"  href="/byCategory/0">All Arts</a></li>
+                                <li><a  class="su-main-nav__menu-lv3" href="/byCategory/5">- Dance</a></li>
+                                <li><a  class="su-main-nav__menu-lv3" href="/byCategory/6">- Drama / Theater</a></li>
+                                <li><a  class="su-main-nav__menu-lv3" href="/byCategory/8">- Film</a></li>
+                                <li><a  class="su-main-nav__menu-lv3" href="/byCategory/25">- Literary Arts</a></li>
+                                <li><a  class="su-main-nav__menu-lv3" href="/byCategory/9">- Music</a></li>
+                                <li><a  class="su-main-nav__menu-lv3" style="border-bottom: 1px solid #4d4f53;" href="/byCategory/20">- Visual Arts</a></li>
+                                <li><a  href="/byCategory/28">Careers</a></li>
+                                <li><a  href="/byCategory/34">Diversity</a></li>
+                                <li><a  href="/byCategory/35">Education</a></li>
+                                <li><a  href="/byCategory/22">Engineering</a></li>
+                                <li><a  href="/byCategory/21">Environment / Sustainability</a></li>
+                                <li><a  href="/byCategory/24">Health / Wellness</a></li>
+                                <li><a  href="/byCategory/23">Humanities</a></li>
+                                <li><a  href="/byCategory/18">International</a></li>
+                                <li><a  href="/byCategory/11">Public Service</a></li>
+                                <li><a  href="/byCategory/30">Science</a></li>
+                                <li><a  href="/byCategory/29">Women / Gender</a></li>
+                              </ul>
+                          </li>
+
+                          <li  class="filter" id="nav-organization" class="menu2">
+                              <a href="/byOrganization/" aria-label="By Organization"><i class="fas fa-users" aria-hidden="true"></i> By Org<span>anization</span></a>
+                          </li>
+
+                      </ul>
+
+
+                   </div>
+
+    </div>
+
+</div>
+</div>
+         -->

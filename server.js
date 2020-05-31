@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express(); 						// create our app w/ express
 var mysql=require('mysql');
-var port = process.env.PORT || 4001; 				// set the port
+var port = process.env.PORT || 4000; 				// set the port
 // var database = require('./config/database'); 			// load the database config
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
@@ -26,10 +26,11 @@ var upload = multer({ storage: storage });
 // configuration ===============================================================
 var connection=mysql.createConnection({
 
-    host:'localhost',
+    host:'db',
     user:'root',
-    password:'' ,
-    database:'sampled'
+    password:'123' ,
+    database:'sampled',
+    port: 3306
 });
 connection.connect(function(error){
 //callback
@@ -43,21 +44,21 @@ connection.connect(function(error){
     }
 });
 
-  
+
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public' + '/html'));
 app.use(express.static(__dirname + '/public' + '/css'));
-app.use(express.static(__dirname + '/public' + '/js'));  
+app.use(express.static(__dirname + '/public' + '/js'));
 app.use(express.static(__dirname + '/public' + '/events'));
 app.use(express.static(__dirname + '/public' + '/gallery'+'/rise'));
 app.use(express.static(__dirname + '/public' + '/gallery'+'/spandan'));
 app.use(express.static(__dirname + '/public' + '/gallery'+'/infin8'));
 app.use(express.static(__dirname + '/public' + '/gallery'+'/sangam'));
 app.use(express.static(__dirname + '/public' + '/gallery'+'/yamini'));
-app.use(express.static(__dirname + '/public' + '/gallery'+'/convocation')); 
-app.use(express.static(__dirname + '/public' + '/gallery'+'/foundationday')); 
-app.use(express.static(__dirname + '/uploads')); 
+app.use(express.static(__dirname + '/public' + '/gallery'+'/convocation'));
+app.use(express.static(__dirname + '/public' + '/gallery'+'/foundationday'));
+app.use(express.static(__dirname + '/uploads'));
 
 	// set the static files location /public/img will be /img for users
 

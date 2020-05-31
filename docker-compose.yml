@@ -1,28 +1,27 @@
-# ./docker-compose.yml
+ # ./docker-compose.yml
 
-version: '3'
+version: '2'
 
 services:
   db:
-    image: mysql:5.7
-    environment:
-      MYSQL_DATABASE: "admindb"
-      MYSQL_USER: "root"
-      MYSQL_ROOT_PASSWORD: "rootpassword"
+    build: ./database
+    image: srujanswaroop/eventsdb
     ports:
       - "3306:3306"
-    volumes:
-      - ./events.sql:/docker-entrypoint-initdb.d/0_init.sql
   events:
     build: .
+    image: srujanswaroop/eventsweb
     container_name: events
     depends_on:
       - db
     ports:
       - "4000:4000"
+    environment:
+     - DATABASE_HOST=db
+    # command: ["./run.sh", "db:3306"]
     stdin_open: true
     tty: true
-    command: tail -F anything
+
     # environment:
     #   DATABASE__CLIENT: mysql
     #   DATABASE__CONNECTION__HOST: mysql
